@@ -11,10 +11,10 @@ $ npm install material-ui-formik-components
 ```
 
 ## Peer dependencies
-- [react](https://www.npmjs.com/package/react) >= 15
-- [react-dom](https://www.npmjs.com/package/react-dom) >= 15
-- [Material-UI](https://material-ui.com) >= 3
-- [Formik](https://jaredpalmer.com/formik) >= 1
+- [react](https://www.npmjs.com/package/react)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [Material-UI](https://material-ui.com)
+- [Formik](https://jaredpalmer.com/formik)
 
 
 # Using the components
