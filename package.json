@@ -61,6 +61,6 @@
         "build:watch": "babel lib -w -d dist",
         "lint": "eslint src/**; exit 0",
         "lint:watch": "esw -w src/**",
-        "prepublish": "npm run build"
+        "prepublishOnly": "npm run build"
     }
 }
