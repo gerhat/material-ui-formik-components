@@ -11,59 +11,59 @@ $ npm install material-ui-formik-components
 ```
 
 ## Peer dependencies
-- [react](https://www.npmjs.com/package/react)
-- [react-dom](https://www.npmjs.com/package/react-dom)
-- [Material-UI](https://material-ui.com)
-- [Formik](https://jaredpalmer.com/formik)
+You also need to have the following dependencies installed:
+- [react](https://www.npmjs.com/package/react) >= 15.0
+- [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
+- [Material-UI](https://material-ui.com) >= 3.0
+- [Formik](https://jaredpalmer.com/formik) >= 1.0
+- [react-select](https://react-select.com) >= 2.0
 
 
 # Using the components
-
+Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/zqo8wj5n5p
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { TextField, Select } from 'material-ui-formik-components';
+import React from "react";
+import { Formik, Form, Field } from "formik";
+import { TextField, Select } from "material-ui-formik-components";
 
-export const RegistrationForm = () => (
-  <div>
-    <h1>Register</h1>
-    <Formik
-      initialValues={{
-        username: '',
-        gender: 0
-      }}
-      onSubmit={values => {
-        // same shape as initial values
-        console.log(values);
-      }}
-    >
-      {({ errors, touched }) => (
-        <Form>
-            <Field
-                name="username"
-                label="Userame"
-                component={TextField}
-            />
-            <Field
+class RegistrationForm extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Register</h1>
+        <Formik
+          initialValues={{
+            username: "",
+            gender: "Male"
+          }}
+          onSubmit={values => {
+            alert(`Username: ${values.username}\nGender: ${values.gender}`);
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <Field name="username" label="Username" component={TextField} />
+              <Field
                 required
                 name="gender"
                 label="Gender"
                 options={[
-                    {value:0, label: 'Male'},
-                    {value:1, label: 'Female'},
-                    {value:2, label: 'Not sure'},
-                    {value:3, label: 'Other'},
-                    {value:4, label: 'Why do you care?'}
+                  { value: "Male", label: "Male" },
+                  { value: "Female", label: "Female" },
+                  { value: "Other", label: "Other" }
                 ]}
                 component={Select}
-            />
-          <button type="submit">Submit</button>
-        </Form>
-      )}
-    </Formik>
-  </div>
-);
+              />
+              <button type="submit">Submit</button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    );
+  }
+}
 
+export default RegistrationForm;
 ```
 
 # License
