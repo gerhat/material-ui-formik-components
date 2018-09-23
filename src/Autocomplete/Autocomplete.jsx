@@ -205,7 +205,20 @@ const components = {
 
 class Autocomplete extends React.PureComponent {
   render () {
-    const { required, classes, theme, label, field, form: { dirty, errors, values, setFieldValue }, options } = this.props
+    const {
+      required,
+      classes,
+      theme,
+      label,
+      field,
+      form: {
+        dirty,
+        errors,
+        values,
+        setFieldValue
+      },
+      options
+    } = this.props
     const errorText = errors[field.name]
     const hasError = dirty && errorText !== undefined
 

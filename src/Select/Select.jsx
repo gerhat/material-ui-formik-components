@@ -7,7 +7,13 @@ import Select from '@material-ui/core/Select'
 
 class FSelect extends React.PureComponent {
   render () {
-    const { required, label, field: { name, onChange, value }, options, ...other } = this.props
+    const {
+      required,
+      label,
+      field: { name, onChange, value },
+      options,
+      ...other
+    } = this.props
     const id = `sel_${name}`
     return (
       <FormControl
