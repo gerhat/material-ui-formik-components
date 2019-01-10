@@ -20,7 +20,7 @@ You also need to have the following dependencies installed:
 
 
 # Using the components
-Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/zqo8wj5n5p
+Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/xoplpm1w84
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";
@@ -36,27 +36,25 @@ class RegistrationForm extends React.Component {
             username: "",
             gender: "Male"
           }}
-          onSubmit={values => {
+          qonSubmit={values => {
             alert(`Username: ${values.username}\nGender: ${values.gender}`);
           }}
         >
-          {({ errors, touched }) => (
-            <Form>
-              <Field name="username" label="Username" component={TextField} />
-              <Field
-                required
-                name="gender"
-                label="Gender"
-                options={[
-                  { value: "Male", label: "Male" },
-                  { value: "Female", label: "Female" },
-                  { value: "Other", label: "Other" }
-                ]}
-                component={Select}
-              />
-              <button type="submit">Submit</button>
-            </Form>
-          )}
+          <Form>
+            <Field name="username" label="Username" component={TextField} />
+            <Field
+              required
+              name="gender"
+              label="Gender"
+              options={[
+                { value: "Male", label: "Male" },
+                { value: "Female", label: "Female" },
+                { value: "Other", label: "Other" }
+              ]}
+              component={Select}
+            />
+            <button type="submit">Submit</button>
+          </Form>
         </Formik>
       </div>
     );

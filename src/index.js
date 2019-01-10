@@ -1,4 +1,4 @@
 
-export { default as TextField } from './TextField'
-export { default as Select } from './Select'
-export { default as Autocomplete } from './Autocomplete'
+export * from './Autocomplete'
+export * from './Select'
+export * from './TextField'
