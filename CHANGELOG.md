@@ -1,6 +1,6 @@
-### [Versions] (https://github.com/gerhat/material-ui-formik-components/releases)
+### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
-### 0.1.3
+## 0.1.3
 ###### *Jan 10, 2019*
 
 - Added Typescript types
