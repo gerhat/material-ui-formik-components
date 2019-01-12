@@ -1,6 +1,6 @@
 # Material-UI Formik Components &middot; [![NPM](https://img.shields.io/npm/v/material-ui-formik-components.svg)](https://www.npmjs.com/package/material-ui-formik-components)
 
-We all love [Material-UI](https://material-ui.com) and [Formik](https://jaredpalmer.com/formik), we just need an easy way to make them work seamlessly together. This library was built just for that.
+We all love <a href="https://material-ui.com" target="_blank">Material-UI</a> and <a href="https://jaredpalmer.com/formik" target="_blank">Formik</a>, we just need an easy way to make them work seamlessly together. This library was built just for that.
 
 # Installation
 
@@ -12,15 +12,15 @@ $ npm install material-ui-formik-components
 
 ## Peer dependencies
 You also need to have the following dependencies installed:
-- [react](https://www.npmjs.com/package/react) >= 15.0
-- [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
-- [Material-UI](https://material-ui.com) >= 3.0
-- [Formik](https://jaredpalmer.com/formik) >= 1.0
-- [react-select](https://react-select.com) >= 2.0
+- <a href="https://www.npmjs.com/package/react" target="_blank">react</a> >= 15.0
+- <a href="https://www.npmjs.com/package/react-dom" target="_blank">react-dom</a> >= 15.0
+- <a href="https://material-ui.com" target="_blank">Material-UI</a> >= 3.0
+- <a href="https://jaredpalmer.com/formik" target="_blank">Formik</a> >= 1.0
+- <a href="https://react-select.com" target="_blank">react-select</a> >= 2.0
 
 
 # Using the components
-Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/xoplpm1w84
+Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: <a href="https://codesandbox.io/s/xoplpm1w84" target="_blank">https://codesandbox.io/s/xoplpm1w84</a>
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";

@@ -1,0 +1,23 @@
+{
+  "name": "material-ui-formik-components-example",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@material-ui/core": "3.8.3",
+    "formik": "1.4.2",
+    "material-ui-formik-components": "0.1.3",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-scripts": "2.1.3",
+    "react-select": "2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
