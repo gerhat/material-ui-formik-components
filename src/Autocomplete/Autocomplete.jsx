@@ -213,6 +213,7 @@ class Autocomplete extends React.PureComponent {
       field,
       form: {
         dirty,
+        touched,
         errors,
         values,
         setFieldValue
@@ -220,7 +221,7 @@ class Autocomplete extends React.PureComponent {
       options
     } = this.props
     const errorText = errors[field.name]
-    const hasError = dirty && errorText !== undefined
+    const hasError = dirty && touched[field.name] && errorText !== undefined
 
     const selectStyles = {
       input: base => ({
@@ -240,7 +241,9 @@ class Autocomplete extends React.PureComponent {
           <Select
             classes={classes}
             styles={selectStyles}
+            required={required}
             textFieldProps={{
+              required: required,
               label: label,
               error: hasError,
               InputLabelProps: {
