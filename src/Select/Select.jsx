@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
+import FormHelperText from '@material-ui/core/FormHelperText'
 import Select from '@material-ui/core/Select'
 
 class FSelect extends React.PureComponent {
@@ -10,21 +11,26 @@ class FSelect extends React.PureComponent {
     const {
       required,
       label,
+      form: { dirty, touched, errors },
       field: { name, onChange, value },
       options,
       ...other
     } = this.props
     const id = `sel_${name}`
+    const errorText = errors[name]
+    const hasError = dirty && touched[name] && errorText !== undefined
     return (
       <FormControl
         fullWidth
         required={required}
         style={{ marginTop: '16px', marginBottom: '8px' }}
+        error={hasError}
       >
         <InputLabel htmlFor={id}>{label}</InputLabel>
         <Select
           onChange={onChange}
           value={value}
+          required={required}
           inputProps={{
             name: name,
             id: 'input_' + id
@@ -41,6 +47,10 @@ class FSelect extends React.PureComponent {
             )
           }
         </Select>
+        {
+          hasError &&
+          <FormHelperText>{errorText}</FormHelperText>
+        }
       </FormControl>
     )
   }
