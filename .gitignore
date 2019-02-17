@@ -17,3 +17,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# specific example files
+/example/node_modules
+/example/package-lock.json

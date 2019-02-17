@@ -36,7 +36,7 @@ class RegistrationForm extends React.Component {
             username: "",
             gender: "Male"
           }}
-          qonSubmit={values => {
+          onSubmit={values => {
             alert(`Username: ${values.username}\nGender: ${values.gender}`);
           }}
         >
