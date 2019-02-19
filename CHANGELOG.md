@@ -1,5 +1,13 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.1.5
+###### *Feb 19, 2019*
+- Props `fullWidth` and `margin` are not hardcoded anymore
+- Fixed `Autocomplete` typescript definitions
+- Bumped up `formik` version to 1.5.1 and `react-select` to 2.4.1
+- Added information about the example in README
+
+
 ## 0.1.4
 ###### *Feb 17, 2019*
 - **Breaking:** Changed default error behavior. Errors now appear only when the field is `touched` [(issue: #2)](https://github.com/gerhat/material-ui-formik-components/issues/2)

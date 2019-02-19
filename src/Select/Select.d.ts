@@ -8,6 +8,8 @@ export interface FSelectProps {
   field: FieldProps;
   form: FormikProps<FormikValues>;
   options: Array<OptionsType>;
+  fullWidth?: boolean;
+  margin?: 'none' | 'dense' | 'normal';
 }
 
 declare const FSelect: React.ComponentType<FSelectProps>;

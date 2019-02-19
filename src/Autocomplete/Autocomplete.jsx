@@ -218,7 +218,8 @@ class Autocomplete extends React.PureComponent {
         values,
         setFieldValue
       },
-      options
+      options,
+      ...other
     } = this.props
     const errorText = errors[field.name]
     const hasError = dirty && touched[field.name] && errorText !== undefined
@@ -233,10 +234,9 @@ class Autocomplete extends React.PureComponent {
     return (
       <div className={classes.root}>
         <FormControl
-          fullWidth
           error={hasError}
           required={required}
-          style={{ marginTop: '12px', marginBottom: '8px' }}
+          {...other}
         >
           <Select
             classes={classes}
@@ -285,7 +285,14 @@ Autocomplete.propTypes = {
         PropTypes.number
       ]).isRequired
     })
-  ).isRequired
+  ).isRequired,
+  fullWidth: PropTypes.bool,
+  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+}
+
+Autocomplete.defaultProps = {
+  fullWidth: true,
+  margin: 'normal'
 }
 
 export default withStyles(styles, { withTheme: true })(Autocomplete)

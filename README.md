@@ -64,5 +64,8 @@ class RegistrationForm extends React.Component {
 export default RegistrationForm;
 ```
 
+# Example
+For a more detailed use of the package, please refer to the code in the [example folder](https://github.com/gerhat/material-ui-formik-components/tree/master/example) of this project.
+
 # License
 MIT

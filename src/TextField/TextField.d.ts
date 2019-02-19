@@ -7,6 +7,8 @@ export interface FTextFieldProps {
   field: FieldProps;
   form: FormikProps<FormikValues>;
   inputProps?: InputProps;
+  fullWidth?: boolean;
+  margin?: 'none' | 'dense' | 'normal';
 }
 
 declare const FTextField: React.ComponentType<FTextFieldProps>;

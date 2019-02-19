@@ -10,8 +10,6 @@ class FTextField extends React.Component {
     return (
       <TextField
         label={label}
-        fullWidth
-        margin='normal'
         error={hasError}
         helperText={hasError ? errorText : ''}
         {...field}
@@ -36,7 +34,14 @@ FTextField.propTypes = {
     dirty: PropTypes.bool,
     errors: PropTypes.object
   }),
-  inputProps: PropTypes.object
+  inputProps: PropTypes.object,
+  fullWidth: PropTypes.bool,
+  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+}
+
+FTextField.defaultProps = {
+  fullWidth: true,
+  margin: 'normal'
 }
 
 export default FTextField

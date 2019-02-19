@@ -14,6 +14,8 @@ class FSelect extends React.PureComponent {
       form: { dirty, touched, errors },
       field: { name, onChange, value },
       options,
+      fullWidth,
+      margin,
       ...other
     } = this.props
     const id = `sel_${name}`
@@ -21,9 +23,9 @@ class FSelect extends React.PureComponent {
     const hasError = dirty && touched[name] && errorText !== undefined
     return (
       <FormControl
-        fullWidth
+        fullWidth={fullWidth}
+        margin={margin}
         required={required}
-        style={{ marginTop: '16px', marginBottom: '8px' }}
         error={hasError}
       >
         <InputLabel htmlFor={id}>{label}</InputLabel>
@@ -79,7 +81,14 @@ FSelect.propTypes = {
         PropTypes.number
       ]).isRequired
     })
-  ).isRequired
+  ).isRequired,
+  fullWidth: PropTypes.bool,
+  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+}
+
+FSelect.defaultProps = {
+  fullWidth: true,
+  margin: 'normal'
 }
 
 export default FSelect
