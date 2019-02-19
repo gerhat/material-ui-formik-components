@@ -6,12 +6,12 @@
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "3.9.2",
-    "formik": "1.5.0",
+    "formik": "1.5.1",
     "material-ui-formik-components": "0.1.4",
     "react": "16.8.2",
     "react-dom": "16.8.2",
     "react-scripts": "2.1.5",
-    "react-select": "2.4.0",
+    "react-select": "2.4.1",
     "yup": "^0.26.10"
   },
   "devDependencies": {},
