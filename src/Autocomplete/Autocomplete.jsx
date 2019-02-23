@@ -291,6 +291,7 @@ Autocomplete.propTypes = {
 }
 
 Autocomplete.defaultProps = {
+  required: false,
   fullWidth: true,
   margin: 'normal'
 }
