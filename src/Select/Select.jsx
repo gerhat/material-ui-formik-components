@@ -87,6 +87,7 @@ FSelect.propTypes = {
 }
 
 FSelect.defaultProps = {
+  required: false,
   fullWidth: true,
   margin: 'normal'
 }
