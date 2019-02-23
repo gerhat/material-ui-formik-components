@@ -252,7 +252,7 @@ class Autocomplete extends React.PureComponent {
             }}
             options={options}
             components={components}
-            onChange={values => setFieldValue(field.name, values)}
+            onChange={value => setFieldValue(field.name, value)}
             value={values[field.name]}
             isMulti
           />
