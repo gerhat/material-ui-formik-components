@@ -269,7 +269,6 @@ class Autocomplete extends React.PureComponent {
 Autocomplete.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
-  required: PropTypes.bool,
   label: PropTypes.string,
   field: PropTypes.object,
   form: PropTypes.shape({
@@ -286,6 +285,7 @@ Autocomplete.propTypes = {
       ]).isRequired
     })
   ).isRequired,
+  required: PropTypes.bool,
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal'])
 }

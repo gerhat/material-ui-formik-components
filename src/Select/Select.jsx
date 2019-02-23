@@ -59,7 +59,6 @@ class FSelect extends React.PureComponent {
 }
 
 FSelect.propTypes = {
-  required: PropTypes.bool,
   label: PropTypes.string,
   field: PropTypes.shape({
     name: PropTypes.string,
@@ -82,6 +81,7 @@ FSelect.propTypes = {
       ]).isRequired
     })
   ).isRequired,
+  required: PropTypes.bool,
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal'])
 }

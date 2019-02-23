@@ -16,11 +16,20 @@ You also need to have the following dependencies installed:
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
 - [Material-UI](https://material-ui.com) >= 3.0
 - [Formik](https://jaredpalmer.com/formik) >= 1.0
-- [react-select](https://react-select.com) >= 2.0
+- [React Select](https://react-select.com) >= 2.0
+- [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0
 
 
 # Using the components
-Currently there are three components supported. `TextField`, `Select` and `Autocomplete`. Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/xoplpm1w84
+The following components supported:
+- `Autocomplete`
+- `DateTimePicker`
+- `RadioGroup`
+- `Select`
+- `Switch`
+- `TextField`
+
+Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/xoplpm1w84
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";

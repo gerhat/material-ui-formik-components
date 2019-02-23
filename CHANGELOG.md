@@ -1,8 +1,16 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.2.0
+###### *Feb 23, 2019*
+- Added `DateTimePicker`, `RadioGroup` and `Switch` components
+- Added default value for `required` prop
+- Updated README
+- Minor refactoring in typescript definitions for `OptionsType`
+
+
 ## 0.1.5
 ###### *Feb 19, 2019*
-- Props `fullWidth` and `margin` are not hardcoded anymore
+- Props `fullWidth` and `margin` are not hard-coded anymore
 - Fixed `Autocomplete` typescript definitions
 - Bumped up `formik` version to 1.5.1 and `react-select` to 2.4.1
 - Added information about the example in README

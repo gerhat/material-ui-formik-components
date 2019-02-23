@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { FieldProps, FormikProps, FormikValues } from 'formik';
-import { SelectOptionsType } from '..'
+import { RadioGroupOptionsType } from '..'
 
-export interface FSelectProps {
+export interface FRadioGroupProps {
   label?: string;
   field: FieldProps;
   form: FormikProps<FormikValues>;
-  options: Array<SelectOptionsType>;
+  options: Array<RadioGroupOptionsType>;
   required?: boolean;
   fullWidth?: boolean;
   margin?: 'none' | 'dense' | 'normal';
 }
 
-declare const FSelect: React.ComponentType<FSelectProps>;
+declare const FRadioGroupProps: React.ComponentType<FRadioGroupProps>;
 
-export default FSelect;
+export default FRadioGroupProps;

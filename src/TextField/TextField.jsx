@@ -40,7 +40,6 @@ FTextField.propTypes = {
 }
 
 FTextField.defaultProps = {
-  required: false,
   fullWidth: true,
   margin: 'normal'
 }

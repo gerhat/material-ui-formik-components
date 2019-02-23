@@ -1,17 +1,15 @@
 import * as React from 'react';
 import { FieldProps, FormikProps, FormikValues } from 'formik';
-import { SelectOptionsType } from '..'
 
-export interface FSelectProps {
+export interface FSwitchProps {
   label?: string;
   field: FieldProps;
   form: FormikProps<FormikValues>;
-  options: Array<SelectOptionsType>;
   required?: boolean;
   fullWidth?: boolean;
   margin?: 'none' | 'dense' | 'normal';
 }
 
-declare const FSelect: React.ComponentType<FSelectProps>;
+declare const FSwitchProps: React.ComponentType<FSwitchProps>;
 
-export default FSelect;
+export default FSwitchProps;

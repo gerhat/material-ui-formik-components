@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { FieldProps, FormikProps, FormikValues } from 'formik';
-import { SelectOptionsType } from '..'
 
-export interface FSelectProps {
+export interface FDateTimePickerProps {
   label?: string;
   field: FieldProps;
   form: FormikProps<FormikValues>;
-  options: Array<SelectOptionsType>;
-  required?: boolean;
   fullWidth?: boolean;
   margin?: 'none' | 'dense' | 'normal';
+  ampm?: boolean;
+  autoOk?: boolean;
 }
 
-declare const FSelect: React.ComponentType<FSelectProps>;
+declare const FDateTimePickerProps: React.ComponentType<FDateTimePickerProps>;
 
-export default FSelect;
+export default FDateTimePickerProps;

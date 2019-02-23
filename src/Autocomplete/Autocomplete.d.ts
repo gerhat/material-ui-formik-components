@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { FieldProps, FormikProps, FormikValues } from 'formik';
-import { OptionsType } from '..'
+import { SelectOptionsType } from '..'
 
 export interface AutocompleteProps {
-  required?: boolean;
   label?: string;
   field: FieldProps;
   form: FormikProps<FormikValues>;
-  options: Array<OptionsType>;
+  options: Array<SelectOptionsType>;
+  required?: boolean;
   fullWidth?: boolean;
   margin?: 'none' | 'dense' | 'normal';
 }
