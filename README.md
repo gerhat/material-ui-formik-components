@@ -4,14 +4,14 @@ We all love [Material-UI](https://material-ui.com) and [Formik](https://jaredpal
 
 # Installation
 
-Install the `material-ui-formik-components` package and its dependencies using the following command:
+Install the `material-ui-formik-components` package using the following command:
 
 ```sh
-$ npm install material-ui-formik-components
+$ npm install --save material-ui-formik-components
 ```
 
 ## Peer dependencies
-You also need to have the following dependencies installed:
+You also **MUST** have the following dependencies installed:
 - [react](https://www.npmjs.com/package/react) >= 15.0
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
 - [Material-UI](https://material-ui.com) >= 3.0
@@ -23,7 +23,7 @@ You also need to have the following dependencies installed:
 # Using the components
 The following components supported:
 - `Autocomplete`
-- `DateTimePicker`
+- `DateTimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.firebaseapp.com/installation)
 - `RadioGroup`
 - `Select`
 - `Switch`
