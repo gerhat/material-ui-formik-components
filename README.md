@@ -21,7 +21,7 @@ You also **MUST** have the following dependencies installed:
 
 
 # Using the components
-The following components supported:
+The following components are supported:
 - `Autocomplete`
 - `DateTimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.firebaseapp.com/installation)
 - `RadioGroup`
