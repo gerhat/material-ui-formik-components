@@ -62,7 +62,7 @@ class RegistrationForm extends React.Component {
               ]}
               component={Select}
             />
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={!props.dirty}>Submit</button>
           </Form>
         </Formik>
       </div>
