@@ -33,36 +33,37 @@ class RegistrationForm extends React.Component {
               }\nCountries: ${values.countries.map(v => v.label).join(',')}`
             )
           }}
-        >
-          <Form noValidate autoComplete='off'>
-            <Field
-              required
-              name='username'
-              label='Username'
-              component={TextField}
-            />
-            <Field
-              required
-              name='gender'
-              label='Gender'
-              options={[
-                { value: '', label: '-- No selection --' },
-                { value: 'Male', label: 'Male' },
-                { value: 'Female', label: 'Female' },
-                { value: 'Other', label: 'Other' }
-              ]}
-              component={Select}
-            />
-            <Field
-              required
-              name='countries'
-              label='Countries'
-              options={countries}
-              component={Autocomplete}
-            />
-            <button type='submit'>Submit</button>
-          </Form>
-        </Formik>
+          render={props => (
+            <Form noValidate autoComplete='off'>
+              <Field
+                required
+                name='username'
+                label='Username'
+                component={TextField}
+              />
+              <Field
+                required
+                name='gender'
+                label='Gender'
+                options={[
+                  { value: '', label: '-- No selection --' },
+                  { value: 'Male', label: 'Male' },
+                  { value: 'Female', label: 'Female' },
+                  { value: 'Other', label: 'Other' }
+                ]}
+                component={Select}
+              />
+              <Field
+                required
+                name='countries'
+                label='Countries'
+                options={countries}
+                component={Autocomplete}
+              />
+              <button type='submit' disabled={!props.dirty}>Submit</button>
+            </Form>
+          )}
+        />
       </div>
     )
   }
