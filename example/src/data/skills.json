@@ -1,0 +1,82 @@
+[
+  {
+    "label": "Acceptance Testing",
+    "value": "Acceptance Testing"
+  },
+  {
+    "label": "ASP.NET",
+    "value": "ASP.NET"
+  },
+  {
+    "label": "Automated Testing",
+    "value": "Automated Testing"
+  },
+  {
+    "label": "C#",
+    "value": "C#"
+  },
+  {
+    "label": "C",
+    "value": "C"
+  },
+  {
+    "label": "C++",
+    "value": "C++"
+  },
+  {
+    "label": "CSS3",
+    "value": "CSS3"
+  },
+  {
+    "label": "Docker",
+    "value": "Docker"
+  },
+  {
+    "label": "ES6",
+    "value": "ES6"
+  },
+  {
+    "label": "HTML5",
+    "value": "HTML5"
+  },
+  {
+    "label": "Java",
+    "value": "Java"
+  },
+  {
+    "label": "Javascript",
+    "value": "Javascript"
+  },
+  {
+    "label": "MongoDB",
+    "value": "MongoDB"
+  },
+  {
+    "label": "MySQL",
+    "value": "MySQL"
+  },
+  {
+    "label": "PostgreSQL",
+    "value": "PostgreSQL"
+  },
+  {
+    "label": "Python",
+    "value": "Python"
+  },
+  {
+    "label": "React",
+    "value": "React"
+  },
+  {
+    "label": "Redis",
+    "value": "Redis"
+  },
+  {
+    "label": "Swift",
+    "value": "Swift"
+  },
+  {
+    "label": "Webpack",
+    "value": "Webpack"
+  }
+]

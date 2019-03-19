@@ -2,18 +2,21 @@ import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Autocomplete, TextField, Select } from 'material-ui-formik-components'
 import { object, string, array } from 'yup'
-import countries from './countries.json'
+import countries from './data/countries.json'
+import skills from './data/skills.json'
 
 const validationSchema = object().shape({
   username: string().required('Username is required'),
   gender: string().required('Gender selection is required'),
-  countries: array().required('At least one country is required')
+  country: string().required('Country is required'),
+  skills: array().required('At least one skill is required')
 })
 
 const initialValues = {
   username: '',
   gender: '',
-  countries: []
+  country: '',
+  skills: []
 }
 
 class RegistrationForm extends React.Component {
@@ -27,10 +30,11 @@ class RegistrationForm extends React.Component {
           validateOnBlur={false}
           validateOnChange
           onSubmit={values => {
-            alert(
-              `Username: ${values.username}\nGender: ${
-                values.gender
-              }\nCountries: ${values.countries.map(v => v.label).join(',')}`
+            alert(`
+              Username: ${values.username}
+              Gender: ${values.gender}
+              Country: ${values.country.label}
+              Skills: ${values.skills.map(v => v.label).join(',')}`
             )
           }}
           render={props => (
@@ -55,10 +59,18 @@ class RegistrationForm extends React.Component {
               />
               <Field
                 required
-                name='countries'
-                label='Countries'
+                name='country'
+                label='Country'
                 options={countries}
                 component={Autocomplete}
+              />
+              <Field
+                required
+                name='skills'
+                label='Skills'
+                options={skills}
+                component={Autocomplete}
+                isMultiple
               />
               <button type='submit' disabled={!props.dirty}>Submit</button>
             </Form>
