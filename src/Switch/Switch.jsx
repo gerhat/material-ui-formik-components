@@ -31,6 +31,20 @@ class FSwitch extends React.PureComponent {
     const errorColor = this.props.theme.palette.error.main
     const labelStyle = hasError ? { color: errorColor } : {}
 
+    const controlProps = {
+      checked: this.state.isChecked,
+      value: values[field.name],
+      onChange: event => {
+        const isChecked = event.target.checked
+        this.setState(
+          { isChecked },
+          () => {
+            setFieldValue(field.name, isChecked)
+          }
+        )
+      }
+    }
+
     return (
       <FormControl
         fullWidth={fullWidth}
@@ -41,19 +55,7 @@ class FSwitch extends React.PureComponent {
         <FormControlLabel
           margin={margin}
           control={
-            <Switch
-              checked={this.state.isChecked}
-              value={values[field.name]}
-              onChange={event => {
-                const isChecked = event.target.checked
-                this.setState(
-                  { isChecked },
-                  () => {
-                    setFieldValue(field.name, isChecked)
-                  }
-                )
-              }}
-            />
+            <Switch {...controlProps} />
           }
           label={
             <span
