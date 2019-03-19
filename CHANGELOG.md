@@ -1,5 +1,11 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.2.1
+###### *Mar 19, 2019*
+- **Breaking:** Added prop `isMultiple` in `Autocomplete` and set it `false` by default
+- Improved example and removed react-scripts
+
+
 ## 0.2.0
 ###### *Feb 23, 2019*
 - Added `DateTimePicker`, `RadioGroup` and `Switch` components

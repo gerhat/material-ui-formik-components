@@ -9,7 +9,7 @@ export interface AutocompleteProps {
   options: Array<SelectOptionsType>;
   required?: boolean;
   fullWidth?: boolean;
-  margin?: 'none' | 'dense' | 'normal';
+  isMultiple?: boolean;
 }
 
 declare const Autocomplete: React.ComponentType<AutocompleteProps>;

@@ -219,6 +219,7 @@ class Autocomplete extends React.PureComponent {
         setFieldValue
       },
       options,
+      isMultiple,
       ...other
     } = this.props
     const errorText = errors[field.name]
@@ -254,7 +255,7 @@ class Autocomplete extends React.PureComponent {
             components={components}
             onChange={value => setFieldValue(field.name, value)}
             value={values[field.name]}
-            isMulti
+            isMulti={isMultiple}
           />
           {
             hasError &&
@@ -287,13 +288,16 @@ Autocomplete.propTypes = {
   ).isRequired,
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+  margin: PropTypes.oneOf(['none', 'dense', 'normal']),
+  isMultiple: PropTypes.bool
 }
 
 Autocomplete.defaultProps = {
+  options: [],
   required: false,
   fullWidth: true,
-  margin: 'normal'
+  margin: 'normal',
+  isMultiple: false
 }
 
 export default withStyles(styles, { withTheme: true })(Autocomplete)
