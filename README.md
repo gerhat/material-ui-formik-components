@@ -48,23 +48,24 @@ class RegistrationForm extends React.Component {
           onSubmit={values => {
             alert(`Username: ${values.username}\nGender: ${values.gender}`);
           }}
-        >
-          <Form>
-            <Field name="username" label="Username" component={TextField} />
-            <Field
-              required
-              name="gender"
-              label="Gender"
-              options={[
-                { value: "Male", label: "Male" },
-                { value: "Female", label: "Female" },
-                { value: "Other", label: "Other" }
-              ]}
-              component={Select}
-            />
-            <button type="submit">Submit</button>
-          </Form>
-        </Formik>
+          render={props => (
+            <Form>
+              <Field name="username" label="Username" component={TextField} />
+              <Field
+                required
+                name="gender"
+                label="Gender"
+                options={[
+                  { value: "Male", label: "Male" },
+                  { value: "Female", label: "Female" },
+                  { value: "Other", label: "Other" }
+                ]}
+                component={Select}
+              />
+              <button type="submit" disabled={!props.dirty}>Submit</button>
+            </Form>
+          )
+        />
       </div>
     );
   }
