@@ -1,5 +1,10 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.2.2
+###### *Mar 20, 2019*
+- Resolved `InputProps` ambiguity in `TextField` component [(issue: #6)](https://github.com/gerhat/material-ui-formik-components/issues/6)
+
+
 ## 0.2.1
 ###### *Mar 19, 2019*
 - **Breaking:** Added prop `isMultiple` in `Autocomplete` and set it `false` by default

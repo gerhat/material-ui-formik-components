@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 
 class FTextField extends React.Component {
   render () {
-    const { label, field, form: { dirty, touched, errors }, inputProps, ...other } = this.props
+    const { label, field, form: { dirty, touched, errors }, ...other } = this.props
     const errorText = errors[field.name]
     const hasError = dirty && touched[field.name] && errorText !== undefined
     return (
@@ -14,7 +14,6 @@ class FTextField extends React.Component {
         helperText={hasError ? errorText : ''}
         {...field}
         {...other}
-        InputProps={inputProps}
       />
     )
   }
@@ -34,7 +33,6 @@ FTextField.propTypes = {
     dirty: PropTypes.bool,
     errors: PropTypes.object
   }),
-  inputProps: PropTypes.object,
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal'])
 }
