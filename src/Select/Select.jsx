@@ -33,6 +33,7 @@ class FSelect extends React.PureComponent {
           onChange={onChange}
           value={value}
           required={required}
+          name={name}
           inputProps={{
             name: name,
             id: 'input_' + id
