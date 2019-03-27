@@ -16,6 +16,7 @@ class FSelect extends React.PureComponent {
       options,
       fullWidth,
       margin,
+      shrink,
       ...other
     } = this.props
     const id = `sel_${name}`
@@ -28,7 +29,7 @@ class FSelect extends React.PureComponent {
         required={required}
         error={hasError}
       >
-        <InputLabel htmlFor={id}>{label}</InputLabel>
+        <InputLabel htmlFor={id} shrink={shrink || !!value}>{label}</InputLabel>
         <Select
           onChange={onChange}
           value={value}
@@ -83,13 +84,15 @@ FSelect.propTypes = {
   ).isRequired,
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+  margin: PropTypes.oneOf(['none', 'dense', 'normal']),
+  shrink: PropTypes.bool,
 }
 
 FSelect.defaultProps = {
   required: false,
   fullWidth: true,
-  margin: 'normal'
+  margin: 'normal',
+  shrink: false,
 }
 
 export default FSelect
