@@ -33,7 +33,8 @@ Below is an example of `TextField` and `Select` components. Code sandbox url: ht
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { TextField, Select } from "material-ui-formik-components";
+import TextField from "material-ui-formik-components/TextField";
+import Select from "material-ui-formik-components/Select";
 
 class RegistrationForm extends React.Component {
   render() {
@@ -50,7 +51,11 @@ class RegistrationForm extends React.Component {
           }}
           render={props => (
             <Form>
-              <Field name="username" label="Username" component={TextField} />
+              <Field
+                name="username"
+                label="Username"
+                component={TextField}
+              />
               <Field
                 required
                 name="gender"
@@ -62,7 +67,12 @@ class RegistrationForm extends React.Component {
                 ]}
                 component={Select}
               />
-              <button type="submit" disabled={!props.dirty}>Submit</button>
+              <button
+                type="submit"
+                disabled={!props.dirty}
+              >
+                Submit
+              </button>
             </Form>
           )
         />
