@@ -11,13 +11,17 @@ $ npm install --save material-ui-formik-components
 ```
 
 ## Peer dependencies
-You also **MUST** have the following dependencies installed:
+The extension depends on the following packages:
+
+**Required**
 - [react](https://www.npmjs.com/package/react) >= 15.0
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
 - [Material-UI](https://material-ui.com) >= 3.0
 - [Formik](https://jaredpalmer.com/formik) >= 1.0
-- [React Select](https://react-select.com) >= 2.0
-- [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0
+
+**Optional**
+- [React Select](https://react-select.com) >= 2.0 - used by `Autocomplete` and `Select`
+- [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0 - used by `DateTimePicker`
 
 
 # Using the components
