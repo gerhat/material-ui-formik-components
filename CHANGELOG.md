@@ -3,7 +3,7 @@
 
 ## 0.2.3
 ###### *Apr 06, 2019*
-- Added the ability to customize the `RadioGroup`
+- Added the ability to fully customize `RadioGroup`
 
 
 ## 0.2.2
