@@ -102,12 +102,12 @@ FRadioGroup.propTypes = {
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal']),
   classes: PropTypes.shape({
-    formControl: PropTypes.object,
-    formLabel: PropTypes.object,
-    radioGroup: PropTypes.object,
-    formControlLabel: PropTypes.object,
-    radio: PropTypes.object,
-    formHelperText: PropTypes.object
+    formControl: PropTypes.string,
+    formLabel: PropTypes.string,
+    radioGroup: PropTypes.string,
+    formControlLabel: PropTypes.string,
+    radio: PropTypes.string,
+    formHelperText: PropTypes.string
   })
 }
 
