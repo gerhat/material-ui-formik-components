@@ -1,5 +1,11 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+
+## 0.2.3
+###### *Apr 06, 2019*
+- Added the ability to customize the `RadioGroup`
+
+
 ## 0.2.2
 ###### *Mar 20, 2019*
 - Resolved `InputProps` ambiguity in `TextField` component [(issue: #6)](https://github.com/gerhat/material-ui-formik-components/issues/6)

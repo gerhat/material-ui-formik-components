@@ -22,6 +22,14 @@ class FRadioGroup extends React.PureComponent {
       required,
       fullWidth,
       margin,
+      classes: {
+        formControl,
+        formLabel,
+        radioGroup,
+        formControlLabel,
+        radio,
+        formHelperText
+      },
       ...other
     } = this.props
     const errorText = errors[field.name]
@@ -33,29 +41,40 @@ class FRadioGroup extends React.PureComponent {
         margin={margin}
         required={required}
         error={hasError}
+        className={formControl}
         {...other}
       >
-        <FormLabel>{label}</FormLabel>
+        <FormLabel
+          className={formLabel}
+        >
+          {label}
+        </FormLabel>
         <RadioGroup
           aria-label={label}
           name={field.name}
           value={values[field.name]}
           onChange={event => setFieldValue(field.name, event.target.value)}
+          className={radioGroup}
         >
           {
             options.map((item, index) =>
               <FormControlLabel
                 key={`${item.label}_${index}`}
                 value={item.value}
-                control={<Radio />}
+                control={<Radio className={radio} />}
                 label={item.label}
+                className={formControlLabel}
               />
             )
           }
         </RadioGroup>
         {
           hasError &&
-          <FormHelperText>{errorText}</FormHelperText>
+          <FormHelperText
+            className={formHelperText}
+          >
+            {errorText}
+          </FormHelperText>
         }
       </FormControl>
     )
@@ -81,7 +100,15 @@ FRadioGroup.propTypes = {
   ).isRequired,
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+  margin: PropTypes.oneOf(['none', 'dense', 'normal']),
+  classes: PropTypes.shape({
+    formControl: PropTypes.object,
+    formLabel: PropTypes.object,
+    radioGroup: PropTypes.object,
+    formControlLabel: PropTypes.object,
+    radio: PropTypes.object,
+    formHelperText: PropTypes.object
+  })
 }
 
 FRadioGroup.defaultProps = {
