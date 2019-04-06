@@ -1,5 +1,9 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.2.4
+###### *Apr 06, 2019*
+- Fixed error in `RadioGroup` PropTypes
+
 
 ## 0.2.3
 ###### *Apr 06, 2019*
