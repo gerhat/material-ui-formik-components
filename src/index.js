@@ -1,4 +1,5 @@
 export * from './Autocomplete'
+export * from './ChipInput'
 export * from './DateTimePicker'
 export * from './RadioGroup'
 export * from './Select'

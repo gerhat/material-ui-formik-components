@@ -11,7 +11,8 @@
     "form",
     "react-select",
     "autocomplete",
-    "material-ui-pickers"
+    "material-ui-pickers",
+    "material-ui-chip-input"
   ],
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
     "react": ">=15",
     "react-dom": ">=15",
     "react-select": ">=2",
-    "material-ui-pickers": ">=2"
+    "material-ui-pickers": ">=2",
+    "material-ui-chip-input": ">=1.0.0-beta.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -56,6 +58,7 @@
     "glob": "^7.1.3",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
+    "material-ui-chip-input": "^1.0.0-beta.16",
     "material-ui-pickers": "^2.2.4",
     "path": "^0.12.7",
     "prettier": "^1.17.0",

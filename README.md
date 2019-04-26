@@ -11,22 +11,28 @@ $ npm install --save material-ui-formik-components
 ```
 
 ## Peer dependencies
+
 The extension depends on the following packages:
 
 **Required**
+
 - [react](https://www.npmjs.com/package/react) >= 15.0
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
 - [Material-UI](https://material-ui.com) >= 3.0
 - [Formik](https://jaredpalmer.com/formik) >= 1.0
 
 **Optional**
+
 - [React Select](https://react-select.com) >= 2.0 - used by `Autocomplete` and `Select`
 - [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0 - used by `DateTimePicker`
-
+- [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= - used by `ChipInput`
 
 # Using the components
+
 The following components are supported:
+
 - `Autocomplete`
+- `ChipInput`
 - `DateTimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.firebaseapp.com/installation)
 - `RadioGroup`
 - `Select`
@@ -34,13 +40,14 @@ The following components are supported:
 - `TextField`
 
 Below is an example of `TextField` and `Select` components. Code sandbox url: https://codesandbox.io/s/xoplpm1w84
+
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import { TextField } from "material-ui-formik-components/TextField";
 import { Select } from "material-ui-formik-components/Select";
 
-class RegistrationForm extends React.Component {
+class RegistrationForm extends React.PureComponent {
   render() {
     return (
       <div>
@@ -89,7 +96,9 @@ export default RegistrationForm;
 ```
 
 # Example
+
 For a more detailed use of the package, please refer to the code in the [example folder](https://github.com/gerhat/material-ui-formik-components/tree/master/example) of this project.
 
 # License
+
 MIT

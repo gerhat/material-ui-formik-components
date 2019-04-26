@@ -1,44 +1,59 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.3.0
+
+###### _Apr 26, 2019_
+
+- Added `ChipInput` component based on [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input)
+- Improved code quality and styling using `eslint-config-airbnb`, `prettier` and `husky`
+
 ## 0.2.4
-###### *Apr 06, 2019*
+
+###### _Apr 06, 2019_
+
 - Fixed error in `RadioGroup` PropTypes
 
-
 ## 0.2.3
-###### *Apr 06, 2019*
+
+###### _Apr 06, 2019_
+
 - Added the ability to fully customize `RadioGroup`
 
-
 ## 0.2.2
-###### *Mar 20, 2019*
+
+###### _Mar 20, 2019_
+
 - Resolved `InputProps` ambiguity in `TextField` component [(issue: #6)](https://github.com/gerhat/material-ui-formik-components/issues/6)
 
-
 ## 0.2.1
-###### *Mar 19, 2019*
+
+###### _Mar 19, 2019_
+
 - **Breaking:** Added prop `isMultiple` in `Autocomplete` and set it `false` by default
 - Improved example and removed react-scripts
 
-
 ## 0.2.0
-###### *Feb 23, 2019*
+
+###### _Feb 23, 2019_
+
 - Added `DateTimePicker`, `RadioGroup` and `Switch` components
 - Added default value for `required` prop
 - Updated README
 - Minor refactoring in typescript definitions for `OptionsType`
 
-
 ## 0.1.5
-###### *Feb 19, 2019*
+
+###### _Feb 19, 2019_
+
 - Props `fullWidth` and `margin` are not hard-coded anymore
 - Fixed `Autocomplete` typescript definitions
 - Bumped up `formik` version to 1.5.1 and `react-select` to 2.4.1
 - Added information about the example in README
 
-
 ## 0.1.4
-###### *Feb 17, 2019*
+
+###### _Feb 17, 2019_
+
 - **Breaking:** Changed default error behavior. Errors now appear only when the field is `touched` [(issue: #2)](https://github.com/gerhat/material-ui-formik-components/issues/2)
 - Added the ability to show error messages in `Select`
 - Fixed asterisk not showing in `Autocomplete` label when `required` is `true`
@@ -48,26 +63,30 @@
 - Updated dependencies in example's `package.json`
 - Minor typo in README
 
-
 ## 0.1.3
-###### *Jan 10, 2019*
+
+###### _Jan 10, 2019_
+
 - Added Typescript types
 - Minor refactoring in `Autocomplete.jsx` and `Select.jsx`
 - Added npm package link to README
 
-
 ## 0.1.2
-###### *Sept 20, 2018*
+
+###### _Sept 20, 2018_
+
 - Fixed a typo in README
 - Moved `react-select` to peer dependencies
 
-
 ## 0.1.1
-###### *Sept 20, 2018*
+
+###### _Sept 20, 2018_
+
 - Added `react-dom` to peer dependencies
 - Added example to README
 
-
 ## 0.1.0
-###### *Sept 18, 2018*
+
+###### _Sept 18, 2018_
+
 - Initial commit
