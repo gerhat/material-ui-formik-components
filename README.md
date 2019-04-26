@@ -25,7 +25,7 @@ The extension depends on the following packages:
 
 - [React Select](https://react-select.com) >= 2.0 - used by `Autocomplete` and `Select`
 - [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0 - used by `DateTimePicker`
-- [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= - used by `ChipInput`
+- [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= 1.0.0-beta.16 - used by `ChipInput`
 
 # Using the components
 
