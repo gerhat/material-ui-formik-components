@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
@@ -14,105 +16,107 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   input: {
     display: 'flex',
-    padding: 0
+    padding: 0,
   },
   valueContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   chip: {
-    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`
+    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`,
   },
   chipFocused: {
     backgroundColor: emphasize(
-      theme.palette.type === 'light' ? theme.palette.grey[300] : theme.palette.grey[700],
+      theme.palette.type === 'light'
+        ? theme.palette.grey[300]
+        : theme.palette.grey[700],
       0.08
-    )
+    ),
   },
   noOptionsMessage: {
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`
+    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
   },
   singleValue: {
-    fontSize: 16
+    fontSize: 16,
   },
   placeholder: {
     position: 'absolute',
     left: 2,
-    fontSize: 16
+    fontSize: 16,
   },
   menu: {
     marginTop: theme.spacing.unit,
     position: 'absolute',
     zIndex: 1,
     left: 0,
-    right: 0
+    right: 0,
   },
   divider: {
-    height: theme.spacing.unit * 2
-  }
+    height: theme.spacing.unit * 2,
+  },
 })
 
-const NoOptionsMessage = (props) => (
+const NoOptionsMessage = ({ selectProps, innerProps, children }) => (
   <Typography
-    color='textSecondary'
-    className={props.selectProps.classes.noOptionsMessage}
-    {...props.innerProps}
+    color="textSecondary"
+    className={selectProps.classes.noOptionsMessage}
+    {...innerProps}
   >
-    {props.children}
+    {children}
   </Typography>
 )
 NoOptionsMessage.propTypes = {
   selectProps: PropTypes.object,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 const inputComponent = ({ inputRef, ...props }) => (
   <div ref={inputRef} {...props} />
 )
 inputComponent.propTypes = {
-  inputRef: PropTypes.func
+  inputRef: PropTypes.func,
 }
 
-const Control = (props) => (
+const Control = ({ selectProps, innerRef, children, innerProps }) => (
   <TextField
     fullWidth
     InputProps={{
       inputComponent,
       inputProps: {
-        className: props.selectProps.classes.input,
-        inputRef: props.innerRef,
-        children: props.children,
-        ...props.innerProps
-      }
+        className: selectProps.classes.input,
+        inputRef: innerRef,
+        children,
+        ...innerProps,
+      },
     }}
-    {...props.selectProps.textFieldProps}
+    {...selectProps.textFieldProps}
   />
 )
 Control.propTypes = {
   innerRef: PropTypes.func,
   selectProps: PropTypes.object,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
-const Option = (props) => (
+const Option = ({ innerRef, isFocused, isSelected, innerProps, children }) => (
   <MenuItem
-    buttonRef={props.innerRef}
-    selected={props.isFocused}
-    component='div'
+    buttonRef={innerRef}
+    selected={isFocused}
+    component="div"
     style={{
-      fontWeight: props.isSelected ? 500 : 400
+      fontWeight: isSelected ? 500 : 400,
     }}
-    {...props.innerProps}
+    {...innerProps}
   >
-    {props.children}
+    {children}
   </MenuItem>
 )
 Option.propTypes = {
@@ -120,53 +124,53 @@ Option.propTypes = {
   isSelected: PropTypes.bool,
   isFocused: PropTypes.bool,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
-const Placeholder = (props) => (
+const Placeholder = ({ selectProps, innerProps, children }) => (
   <Typography
-    color='textSecondary'
-    className={props.selectProps.classes.placeholder}
-    {...props.innerProps}
+    color="textSecondary"
+    className={selectProps.classes.placeholder}
+    {...innerProps}
   >
-    {props.children}
+    {children}
   </Typography>
 )
 Placeholder.propTypes = {
   selectProps: PropTypes.object,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
-const SingleValue = (props) => (
-  <Typography className={props.selectProps.classes.singleValue} {...props.innerProps}>
-    {props.children}
+const SingleValue = ({ selectProps, innerProps, children }) => (
+  <Typography className={selectProps.classes.singleValue} {...innerProps}>
+    {children}
   </Typography>
 )
 SingleValue.propTypes = {
   selectProps: PropTypes.object,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
-const ValueContainer = (props) => (
-  <div className={props.selectProps.classes.valueContainer}>{props.children}</div>
+const ValueContainer = ({ selectProps, children }) => (
+  <div className={selectProps.classes.valueContainer}>{children}</div>
 )
 ValueContainer.propTypes = {
   selectProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
-const MultiValue = (props) => (
+const MultiValue = ({ selectProps, children, isFocused, removeProps }) => (
   <Chip
     tabIndex={-1}
-    label={props.children}
-    className={classNames(props.selectProps.classes.chip, {
-      [props.selectProps.classes.chipFocused]: props.isFocused
+    label={children}
+    className={classNames(selectProps.classes.chip, {
+      [selectProps.classes.chipFocused]: isFocused,
     })}
     onDelete={event => {
-      props.removeProps.onClick()
-      props.removeProps.onMouseDown(event)
+      removeProps.onClick()
+      removeProps.onMouseDown(event)
     }}
   />
 )
@@ -174,22 +178,18 @@ MultiValue.propTypes = {
   selectProps: PropTypes.object,
   isFocused: PropTypes.bool,
   children: PropTypes.node,
-  removeProps: PropTypes.object
+  removeProps: PropTypes.object,
 }
 
-const Menu = (props) => (
-  <Paper
-    square
-    className={props.selectProps.classes.menu}
-    {...props.innerProps}
-  >
-    {props.children}
+const Menu = ({ selectProps, innerProps, children }) => (
+  <Paper square className={selectProps.classes.menu} {...innerProps}>
+    {children}
   </Paper>
 )
 Menu.propTypes = {
   selectProps: PropTypes.object,
   innerProps: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 const components = {
@@ -200,24 +200,18 @@ const components = {
   SingleValue,
   MultiValue,
   ValueContainer,
-  Menu
+  Menu,
 }
 
 class Autocomplete extends React.PureComponent {
-  render () {
+  render() {
     const {
       required,
       classes,
       theme,
       label,
       field,
-      form: {
-        dirty,
-        touched,
-        errors,
-        values,
-        setFieldValue
-      },
+      form: { dirty, touched, errors, values, setFieldValue },
       options,
       isMultiple,
       ...other
@@ -228,28 +222,24 @@ class Autocomplete extends React.PureComponent {
     const selectStyles = {
       input: base => ({
         ...base,
-        color: theme.palette.text.primary
-      })
+        color: theme.palette.text.primary,
+      }),
     }
 
     return (
       <div className={classes.root}>
-        <FormControl
-          error={hasError}
-          required={required}
-          {...other}
-        >
+        <FormControl error={hasError} required={required} {...other}>
           <Select
             classes={classes}
             styles={selectStyles}
             required={required}
             textFieldProps={{
-              required: required,
-              label: label,
+              required,
+              label,
               error: hasError,
               InputLabelProps: {
-                shrink: true
-              }
+                shrink: true,
+              },
             }}
             options={options}
             components={components}
@@ -257,10 +247,7 @@ class Autocomplete extends React.PureComponent {
             value={values[field.name]}
             isMulti={isMultiple}
           />
-          {
-            hasError &&
-            <FormHelperText>{errorText}</FormHelperText>
-          }
+          {hasError && <FormHelperText>{errorText}</FormHelperText>}
         </FormControl>
       </div>
     )
@@ -275,29 +262,26 @@ Autocomplete.propTypes = {
   form: PropTypes.shape({
     dirty: PropTypes.bool,
     errors: PropTypes.object,
-    setFieldValue: PropTypes.func
-  }),
+    setFieldValue: PropTypes.func,
+  }).isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-      ]).isRequired
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
     })
   ).isRequired,
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal']),
-  isMultiple: PropTypes.bool
+  isMultiple: PropTypes.bool,
 }
 
 Autocomplete.defaultProps = {
-  options: [],
   required: false,
   fullWidth: true,
   margin: 'normal',
-  isMultiple: false
+  isMultiple: false,
 }
 
 export default withStyles(styles, { withTheme: true })(Autocomplete)

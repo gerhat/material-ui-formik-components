@@ -7,42 +7,43 @@ import { withTheme } from '@material-ui/core/styles'
 import FormHelperText from '@material-ui/core/FormHelperText'
 
 class FSwitch extends React.PureComponent {
-  state = {
-    isChecked: this.props.form.values[this.props.field.name]
+  constructor(props) {
+    super(props)
+
+    const {
+      form: { values },
+      field: { name },
+    } = props
+    const initialState = values[name]
+    this.state = { isChecked: initialState }
   }
 
-  render () {
+  render() {
     const {
       label,
       field,
-      form: {
-        touched,
-        errors,
-        values,
-        setFieldValue
-      },
+      form: { touched, errors, values, setFieldValue },
       required,
       fullWidth,
       margin,
+      theme,
       ...other
     } = this.props
+    const { isChecked } = this.state
     const errorText = errors[field.name]
     const hasError = touched[field.name] && errorText !== undefined
-    const errorColor = this.props.theme.palette.error.main
+    const errorColor = theme.palette.error.main
     const labelStyle = hasError ? { color: errorColor } : {}
 
     const controlProps = {
-      checked: this.state.isChecked,
+      checked: isChecked,
       value: values[field.name],
       onChange: event => {
-        const isChecked = event.target.checked
-        this.setState(
-          { isChecked },
-          () => {
-            setFieldValue(field.name, isChecked)
-          }
-        )
-      }
+        const { checked } = event.target
+        this.setState({ isChecked: checked }, () => {
+          setFieldValue(field.name, checked)
+        })
+      },
     }
 
     return (
@@ -54,47 +55,37 @@ class FSwitch extends React.PureComponent {
       >
         <FormControlLabel
           margin={margin}
-          control={
-            <Switch {...controlProps} />
-          }
-          label={
-            <span
-              style={labelStyle}
-            >
-              {label}
-            </span>
-          }
+          control={<Switch {...controlProps} />}
+          label={<span style={labelStyle}>{label}</span>}
         />
-        {
-          hasError &&
-          <FormHelperText>{errorText}</FormHelperText>
-        }
+        {hasError && <FormHelperText>{errorText}</FormHelperText>}
       </FormControl>
     )
   }
 }
 
 FSwitch.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   field: PropTypes.shape({
-    name: PropTypes.string
-  }),
+    name: PropTypes.string,
+  }).isRequired,
   form: PropTypes.shape({
     touched: PropTypes.object,
     errors: PropTypes.object,
     values: PropTypes.object,
-    setFieldValue: PropTypes.func
-  }),
-  theme: PropTypes.object,
+    setFieldValue: PropTypes.func,
+  }).isRequired,
+  theme: PropTypes.shape({ palette: PropTypes.object }),
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+  margin: PropTypes.oneOf(['none', 'dense', 'normal']),
 }
 
 FSwitch.defaultProps = {
+  theme: {},
   required: false,
   fullWidth: true,
-  margin: 'normal'
+  margin: 'normal',
 }
 
 export default withTheme()(FSwitch)

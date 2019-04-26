@@ -3,16 +3,11 @@ import PropTypes from 'prop-types'
 import { DateTimePicker } from 'material-ui-pickers'
 
 class FDateTimePicker extends React.PureComponent {
-  render () {
+  render() {
     const {
       label,
       field,
-      form: {
-        touched,
-        errors,
-        values,
-        setFieldValue
-      },
+      form: { touched, errors, values, setFieldValue },
       ...other
     } = this.props
     const errorText = errors[field.name]
@@ -31,25 +26,25 @@ class FDateTimePicker extends React.PureComponent {
 }
 
 FDateTimePicker.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   field: PropTypes.shape({
-    name: PropTypes.string
-  }),
+    name: PropTypes.string,
+  }).isRequired,
   form: PropTypes.shape({
     dirty: PropTypes.bool,
-    errors: PropTypes.object
-  }),
+    errors: PropTypes.object,
+  }).isRequired,
   fullWidth: PropTypes.bool,
   margin: PropTypes.oneOf(['none', 'dense', 'normal']),
   ampm: PropTypes.bool,
-  autoOk: PropTypes.bool
+  autoOk: PropTypes.bool,
 }
 
 FDateTimePicker.defaultProps = {
   fullWidth: true,
   margin: 'normal',
   ampm: false,
-  autoOk: true
+  autoOk: true,
 }
 
 export default FDateTimePicker

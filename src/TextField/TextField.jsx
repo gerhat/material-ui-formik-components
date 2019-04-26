@@ -2,44 +2,43 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
 
-class FTextField extends React.Component {
-  render () {
-    const { label, field, form: { dirty, touched, errors }, ...other } = this.props
-    const errorText = errors[field.name]
-    const hasError = dirty && touched[field.name] && errorText !== undefined
-    return (
-      <TextField
-        label={label}
-        error={hasError}
-        helperText={hasError ? errorText : ''}
-        {...field}
-        {...other}
-      />
-    )
-  }
+const FTextField = ({
+  label,
+  field,
+  form: { dirty, touched, errors },
+  ...other
+}) => {
+  const errorText = errors[field.name]
+  const hasError = dirty && touched[field.name] && errorText !== undefined
+  return (
+    <TextField
+      label={label}
+      error={hasError}
+      helperText={hasError ? errorText : ''}
+      {...field}
+      {...other}
+    />
+  )
 }
 
 FTextField.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   field: PropTypes.shape({
     name: PropTypes.string,
     onChange: PropTypes.func,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ])
-  }),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }).isRequired,
   form: PropTypes.shape({
     dirty: PropTypes.bool,
-    errors: PropTypes.object
-  }),
+    errors: PropTypes.object,
+  }).isRequired,
   fullWidth: PropTypes.bool,
-  margin: PropTypes.oneOf(['none', 'dense', 'normal'])
+  margin: PropTypes.oneOf(['none', 'dense', 'normal']),
 }
 
 FTextField.defaultProps = {
   fullWidth: true,
-  margin: 'normal'
+  margin: 'normal',
 }
 
 export default FTextField

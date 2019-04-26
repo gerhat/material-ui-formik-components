@@ -8,16 +8,11 @@ import FormLabel from '@material-ui/core/FormLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
 
 class FRadioGroup extends React.PureComponent {
-  render () {
+  render() {
     const {
       label,
       field,
-      form: {
-        touched,
-        errors,
-        values,
-        setFieldValue
-      },
+      form: { touched, errors, values, setFieldValue },
       options,
       required,
       fullWidth,
@@ -28,7 +23,7 @@ class FRadioGroup extends React.PureComponent {
         radioGroup,
         formControlLabel,
         radio,
-        formHelperText
+        formHelperText,
       },
       ...other
     } = this.props
@@ -36,7 +31,7 @@ class FRadioGroup extends React.PureComponent {
     const hasError = touched[field.name] && errorText !== undefined
     return (
       <FormControl
-        component='fieldset'
+        component="fieldset"
         fullWidth={fullWidth}
         margin={margin}
         required={required}
@@ -44,11 +39,7 @@ class FRadioGroup extends React.PureComponent {
         className={formControl}
         {...other}
       >
-        <FormLabel
-          className={formLabel}
-        >
-          {label}
-        </FormLabel>
+        <FormLabel className={formLabel}>{label}</FormLabel>
         <RadioGroup
           aria-label={label}
           name={field.name}
@@ -56,46 +47,41 @@ class FRadioGroup extends React.PureComponent {
           onChange={event => setFieldValue(field.name, event.target.value)}
           className={radioGroup}
         >
-          {
-            options.map((item, index) =>
-              <FormControlLabel
-                key={`${item.label}_${index}`}
-                value={item.value}
-                control={<Radio className={radio} />}
-                label={item.label}
-                className={formControlLabel}
-              />
-            )
-          }
+          {options.map(item => (
+            <FormControlLabel
+              key={`${item.label}_${item.value}`}
+              value={item.value}
+              control={<Radio className={radio} />}
+              label={item.label}
+              className={formControlLabel}
+            />
+          ))}
         </RadioGroup>
-        {
-          hasError &&
-          <FormHelperText
-            className={formHelperText}
-          >
+        {hasError && (
+          <FormHelperText className={formHelperText}>
             {errorText}
           </FormHelperText>
-        }
+        )}
       </FormControl>
     )
   }
 }
 
 FRadioGroup.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   field: PropTypes.shape({
-    name: PropTypes.string
-  }),
+    name: PropTypes.string,
+  }).isRequired,
   form: PropTypes.shape({
     touched: PropTypes.object,
     errors: PropTypes.object,
     values: PropTypes.object,
-    setFieldValue: PropTypes.func
-  }),
+    setFieldValue: PropTypes.func,
+  }).isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      label: PropTypes.string.isRequired,
     })
   ).isRequired,
   required: PropTypes.bool,
@@ -107,15 +93,15 @@ FRadioGroup.propTypes = {
     radioGroup: PropTypes.string,
     formControlLabel: PropTypes.string,
     radio: PropTypes.string,
-    formHelperText: PropTypes.string
-  })
+    formHelperText: PropTypes.string,
+  }),
 }
 
 FRadioGroup.defaultProps = {
-  options: undefined,
   required: false,
   fullWidth: true,
-  margin: 'normal'
+  margin: 'normal',
+  classes: undefined,
 }
 
 export default FRadioGroup
