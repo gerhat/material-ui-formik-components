@@ -88,4 +88,4 @@ FSwitch.defaultProps = {
   margin: 'normal',
 }
 
-export default withTheme()(FSwitch)
+export default withTheme(FSwitch)

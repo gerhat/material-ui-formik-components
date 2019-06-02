@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { DateTimePicker } from 'material-ui-pickers'
+import { DateTimePicker } from '@material-ui/pickers'
 
 class FDateTimePicker extends React.PureComponent {
   render() {
