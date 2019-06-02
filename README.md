@@ -16,15 +16,15 @@ The extension depends on the following packages:
 
 **Required**
 
-- [react](https://www.npmjs.com/package/react) >= 15.0
-- [react-dom](https://www.npmjs.com/package/react-dom) >= 15.0
-- [Material-UI](https://material-ui.com) >= 3.0
+- [react](https://www.npmjs.com/package/react) >= 16.8
+- [react-dom](https://www.npmjs.com/package/react-dom) >= 16.8
+- [Material-UI](https://material-ui.com) >= 4.0
 - [Formik](https://jaredpalmer.com/formik) >= 1.0
 
 **Optional**
 
 - [React Select](https://react-select.com) >= 2.0 - used by `Autocomplete` and `Select`
-- [Material-UI Pickers](https://material-ui-pickers.firebaseapp.com/) >= 2.0 - used by `DateTimePicker`
+- [Material-UI Pickers](https://material-ui-pickers.dev/) >= 3.0 - used by `DateTimePicker`
 - [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= 1.0.0-beta.16 - used by `ChipInput`
 
 # Using the components
@@ -33,7 +33,7 @@ The following components are supported:
 
 - `Autocomplete`
 - `ChipInput`
-- `DateTimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.firebaseapp.com/installation)
+- `DateTimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.dev/getting-started/installation)
 - `RadioGroup`
 - `Select`
 - `Switch`
