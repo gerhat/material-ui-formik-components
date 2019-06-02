@@ -1,5 +1,12 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.4.0
+
+###### _Jun 2, 2019_
+
+- Added support for Material UI v4
+- Replaced `material-ui-pickers v2` with `@material-ui/pickers v3`
+
 ## 0.3.0
 
 ###### _Apr 26, 2019_
