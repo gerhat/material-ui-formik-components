@@ -4,7 +4,7 @@
 
 ###### _Jun 2, 2019_
 
-- Added support for Material UI v4
+- Added support for `Material UI v4`
 - Replaced `material-ui-pickers v2` with `@material-ui/pickers v3`
 
 ## 0.3.0
