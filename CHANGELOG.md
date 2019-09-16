@@ -1,5 +1,10 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.4.1
+
+- Updated dependencies to the latest version
+
+
 ## 0.4.0
 
 ###### _Jun 2, 2019_
