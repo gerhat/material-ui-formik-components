@@ -54,38 +54,31 @@ class RegistrationForm extends React.PureComponent {
         <h1>Register</h1>
         <Formik
           initialValues={{
-            username: "",
-            gender: "Male"
+            username: '',
+            gender: 'Male',
           }}
           onSubmit={values => {
-            alert(`Username: ${values.username}\nGender: ${values.gender}`);
+            alert(`Username: ${values.username}\nGender: ${values.gender}`)
           }}
           render={props => (
             <Form>
-              <Field
-                name="username"
-                label="Username"
-                component={TextField}
-              />
+              <Field name="username" label="Username" component={TextField} />
               <Field
                 required
                 name="gender"
                 label="Gender"
                 options={[
-                  { value: "Male", label: "Male" },
-                  { value: "Female", label: "Female" },
-                  { value: "Other", label: "Other" }
+                  { value: 'Male', label: 'Male' },
+                  { value: 'Female', label: 'Female' },
+                  { value: 'Other', label: 'Other' },
                 ]}
                 component={Select}
               />
-              <button
-                type="submit"
-                disabled={!props.dirty}
-              >
+              <button type="submit" disabled={!props.dirty}>
                 Submit
               </button>
             </Form>
-          )
+          )}
         />
       </div>
     );
