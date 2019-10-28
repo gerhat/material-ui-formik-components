@@ -1,17 +1,17 @@
 const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
   output: {
     filename: 'app.min.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -19,38 +19,44 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader'
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.(css|scss)$/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
-          'sass-loader' // compiles Sass to CSS, using Node Sass by default
-        ]
-      }
-    ]
+          'sass-loader', // compiles Sass to CSS, using Node Sass by default
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: 'index.html'
-    })
+      filename: 'index.html',
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, '../public'),
     compress: true,
     historyApiFallback: true,
-    port: 3000
-  }
+    port: 3000,
+  },
+  resolve: {
+    alias: {
+      react: path.resolve('./node_modules/react'),
+    },
+    extensions: ['.scss', '.jsx', '.js', '.json'],
+  },
 }
