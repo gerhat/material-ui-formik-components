@@ -6,13 +6,14 @@ import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormLabel from '@material-ui/core/FormLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
+import { getIn } from 'formik'
 
 class FRadioGroup extends React.PureComponent {
   render() {
     const {
       label,
       field,
-      form: { touched, errors, values, setFieldValue },
+      form: { touched, errors, setFieldValue },
       options,
       required,
       fullWidth,
@@ -27,8 +28,9 @@ class FRadioGroup extends React.PureComponent {
       },
       ...other
     } = this.props
-    const errorText = errors[field.name]
-    const hasError = touched[field.name] && errorText !== undefined
+    const errorText = getIn(errors, field.name)
+    const touchedVal = getIn(touched, field.name)
+    const hasError = touchedVal && errorText !== undefined
     return (
       <FormControl
         component="fieldset"
@@ -37,13 +39,14 @@ class FRadioGroup extends React.PureComponent {
         required={required}
         error={hasError}
         className={formControl}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}
       >
         <FormLabel className={formLabel}>{label}</FormLabel>
         <RadioGroup
           aria-label={label}
           name={field.name}
-          value={values[field.name]}
+          value={field.value}
           onChange={event => setFieldValue(field.name, event.target.value)}
           className={radioGroup}
         >
@@ -71,11 +74,11 @@ FRadioGroup.propTypes = {
   label: PropTypes.string.isRequired,
   field: PropTypes.shape({
     name: PropTypes.string,
+    value: PropTypes.any,
   }).isRequired,
   form: PropTypes.shape({
     touched: PropTypes.object,
     errors: PropTypes.object,
-    values: PropTypes.object,
     setFieldValue: PropTypes.func,
   }).isRequired,
   options: PropTypes.arrayOf(

@@ -1,24 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { DateTimePicker } from '@material-ui/pickers'
+import { getIn } from 'formik'
 
 class FDateTimePicker extends React.PureComponent {
   render() {
     const {
       label,
       field,
-      form: { touched, errors, values, setFieldValue },
+      form: { touched, errors, setFieldValue },
       ...other
     } = this.props
-    const errorText = errors[field.name]
-    const hasError = touched[field.name] && errorText !== undefined
+    const errorText = getIn(errors, field.name)
+    const touchedVal = getIn(touched, field.name)
+    const hasError = touchedVal && errorText !== undefined
     return (
       <DateTimePicker
         label={label}
         error={hasError}
         helperText={hasError ? errorText : ''}
         onChange={value => setFieldValue(field.name, value)}
-        value={values[field.name]}
+        value={field.value}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}
       />
     )
@@ -29,6 +32,7 @@ FDateTimePicker.propTypes = {
   label: PropTypes.string.isRequired,
   field: PropTypes.shape({
     name: PropTypes.string,
+    value: PropTypes.any,
   }).isRequired,
   form: PropTypes.shape({
     dirty: PropTypes.bool,

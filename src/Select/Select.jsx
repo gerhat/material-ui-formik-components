@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import Select from '@material-ui/core/Select'
+import { getIn } from 'formik'
 
 class FSelect extends React.PureComponent {
   render() {
@@ -19,8 +20,10 @@ class FSelect extends React.PureComponent {
       ...other
     } = this.props
     const id = `sel_${name}`
-    const errorText = errors[name]
-    const hasError = dirty && touched[name] && errorText !== undefined
+    const errorText = getIn(errors, name)
+    const touchedVal = getIn(touched, name)
+    const hasError = dirty && touchedVal && errorText !== undefined
+
     return (
       <FormControl
         fullWidth={fullWidth}
@@ -37,6 +40,7 @@ class FSelect extends React.PureComponent {
             name,
             id: `input_${id}`,
           }}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...other}
         >
           {options.map(item => (

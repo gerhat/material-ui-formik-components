@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Switch from '@material-ui/core/Switch'
@@ -5,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withTheme } from '@material-ui/core/styles'
 import FormHelperText from '@material-ui/core/FormHelperText'
+import { getIn } from 'formik'
 
 class FSwitch extends React.PureComponent {
   constructor(props) {
@@ -30,8 +32,10 @@ class FSwitch extends React.PureComponent {
       ...other
     } = this.props
     const { isChecked } = this.state
-    const errorText = errors[field.name]
-    const hasError = touched[field.name] && errorText !== undefined
+
+    const errorText = getIn(errors, field.name)
+    const touchedVal = getIn(touched, field.name)
+    const hasError = touchedVal && errorText !== undefined
     const errorColor = theme.palette.error.main
     const labelStyle = hasError ? { color: errorColor } : {}
 

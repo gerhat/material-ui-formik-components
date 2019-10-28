@@ -1,44 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ChipInput from 'material-ui-chip-input'
+import { getIn } from 'formik'
 
 class FChipInput extends React.PureComponent {
   handleAddChip = chip => {
     const {
-      form: { values, setFieldValue },
-      field: { name },
+      form: { setFieldValue },
+      field: { name, value },
     } = this.props
 
-    const value = [...values[name], chip]
-    setFieldValue(name, value)
+    const newValue = [...value, chip]
+    setFieldValue(name, newValue)
   }
 
   handleDeleteChip = (chip, index) => {
     const {
-      form: { values, setFieldValue },
-      field: { name },
+      form: { setFieldValue },
+      field: { name, value },
     } = this.props
 
-    const value = values[name].filter((val, idx) => idx !== index)
-    setFieldValue(name, value)
+    const newValue = value.filter((val, idx) => idx !== index)
+    setFieldValue(name, newValue)
   }
 
   render() {
     const {
       required,
-      form: { dirty, touched, errors, values },
-      field: { name },
+      form: { dirty, touched, errors },
+      field: { name, value },
       options,
       ...other
     } = this.props
+
     const id = `chip_${name}`
-    const errorText = errors[name]
-    const hasError = dirty && touched[name] && errorText !== undefined
+    const errorText = getIn(errors, name)
+    const touchedVal = getIn(touched, name)
+    const hasError = dirty && touchedVal && errorText !== undefined
 
     return (
       <ChipInput
         required={required}
-        value={values[name]}
+        value={value}
         InputProps={{
           name,
           id: `input_${id}`,
@@ -47,6 +50,7 @@ class FChipInput extends React.PureComponent {
         onDelete={this.handleDeleteChip}
         helperText={hasError ? errorText : ''}
         error={hasError}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}
       />
     )

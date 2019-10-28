@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
+import { getIn } from 'formik'
 
 const FTextField = ({
   label,
@@ -8,8 +10,10 @@ const FTextField = ({
   form: { dirty, touched, errors },
   ...other
 }) => {
-  const errorText = errors[field.name]
-  const hasError = dirty && touched[field.name] && errorText !== undefined
+  const errorText = getIn(errors, field.name)
+  const touchedVal = getIn(touched, field.name)
+  const hasError = dirty && touchedVal && errorText !== undefined
+
   return (
     <TextField
       label={label}

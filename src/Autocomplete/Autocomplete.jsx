@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react'
@@ -13,6 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { emphasize } from '@material-ui/core/styles/colorManipulator'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
+import { getIn } from 'formik'
 
 const styles = theme => ({
   root: {
@@ -212,13 +214,15 @@ class Autocomplete extends React.PureComponent {
       theme,
       label,
       field,
-      form: { dirty, touched, errors, values, setFieldValue },
+      form: { dirty, touched, errors, setFieldValue },
       options,
       isMultiple,
       ...other
     } = this.props
-    const errorText = errors[field.name]
-    const hasError = dirty && touched[field.name] && errorText !== undefined
+
+    const errorText = getIn(errors, field.name)
+    const touchedVal = getIn(touched, field.name)
+    const hasError = dirty && touchedVal && errorText !== undefined
 
     const selectStyles = {
       input: base => ({
@@ -245,7 +249,7 @@ class Autocomplete extends React.PureComponent {
             options={options}
             components={components}
             onChange={value => setFieldValue(field.name, value)}
-            value={values[field.name]}
+            value={field.value}
             isMulti={isMultiple}
           />
           {hasError && <FormHelperText>{errorText}</FormHelperText>}
