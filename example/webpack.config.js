@@ -56,6 +56,9 @@ module.exports = {
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
+      '@material-ui/pickers': path.resolve(
+        './node_modules/@material-ui/pickers'
+      ),
     },
     extensions: ['.scss', '.jsx', '.js', '.json'],
   },

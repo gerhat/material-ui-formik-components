@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, FieldArray } from 'formik'
 import { object, string, array } from 'yup'
-import { ChipInput, TextField } from '../../src'
+import { ChipInput, TextField, Select, DateTimePicker } from '../../src'
 
 const validationSchema = object().shape({
   friends: array().of(
@@ -9,7 +9,9 @@ const validationSchema = object().shape({
       name: string()
         .min(4, 'Name is too short')
         .required('Name is Required'),
-      skills: array().required('Skills are required'),
+      interests: array().required('Interests is required'),
+      gender: string().required('Gender is required'),
+      birthdate: string().required('Birth date is required'),
     })
   ),
 })
@@ -20,7 +22,9 @@ const initialValues = {
 
 const emptyFriendObject = {
   name: '',
-  skills: [],
+  interests: [],
+  gender: '',
+  birthdate: '',
 }
 
 const FieldArrayExample = () => (
@@ -36,7 +40,7 @@ const FieldArrayExample = () => (
       }}
     >
       {props => (
-        <Form>
+        <Form noValidate autoComplete="off">
           <FieldArray
             name="friends"
             render={arrayHelpers => (
@@ -49,11 +53,31 @@ const FieldArrayExample = () => (
                         name={`friends.${index}.name`}
                         component={TextField}
                         label="Name"
+                        required
                       />
                       <Field
-                        name={`friends.${index}.skills`}
+                        name={`friends.${index}.interests`}
                         component={ChipInput}
-                        label="Skills"
+                        label="Interests (type an interest and press space)"
+                        required
+                      />
+                      <Field
+                        name={`friends.${index}.gender`}
+                        component={Select}
+                        options={[
+                          { value: '', label: '-- No selection --' },
+                          { value: 'Male', label: 'Male' },
+                          { value: 'Female', label: 'Female' },
+                          { value: 'Other', label: 'Other' },
+                        ]}
+                        label="Gender"
+                        required
+                      />
+                      <Field
+                        name={`friends.${index}.birthdate`}
+                        component={DateTimePicker}
+                        label="Birth date"
+                        required
                       />
                       <div style={{ marginTop: 20 }}>
                         <button

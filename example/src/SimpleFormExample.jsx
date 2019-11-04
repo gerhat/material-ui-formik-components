@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import { object, string, array } from 'yup'
-import { Autocomplete, Select, TextField } from '../../src'
+import { object, string, array, date } from 'yup'
+import { Autocomplete, Select, TextField, DateTimePicker } from '../../src'
 import countries from './data/countries.json'
 import skills from './data/skills.json'
 
@@ -10,6 +10,7 @@ const validationSchema = object().shape({
   gender: string().required('Gender selection is required'),
   country: string().required('Country is required'),
   skills: array().required('At least one skill is required'),
+  birthdate: date().required('Birth date is required'),
 })
 
 const initialValues = {
@@ -17,6 +18,7 @@ const initialValues = {
   gender: '',
   country: '',
   skills: [],
+  birthdate: '',
 }
 
 const SimpleFormExample = () => (
@@ -33,7 +35,8 @@ const SimpleFormExample = () => (
               Username: ${values.username}
               Gender: ${values.gender}
               Country: ${values.country.label}
-              Skills: ${values.skills.map(v => v.label).join(',')}`)
+              Skills: ${values.skills.map(v => v.label).join(',')}
+              Birth date: ${values.birthdate}`)
       }}
       render={props => (
         <Form noValidate autoComplete="off">
@@ -69,6 +72,12 @@ const SimpleFormExample = () => (
             options={skills}
             component={Autocomplete}
             isMultiple
+          />
+          <Field
+            required
+            name="birthdate"
+            component={DateTimePicker}
+            label="Birth date"
           />
           <button type="submit" disabled={!props.dirty}>
             Submit
