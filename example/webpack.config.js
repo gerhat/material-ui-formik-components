@@ -56,6 +56,7 @@ module.exports = {
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
+      '@material-ui/styles': path.resolve('./node_modules/@material-ui/styles'),
       '@material-ui/pickers': path.resolve(
         './node_modules/@material-ui/pickers'
       ),
