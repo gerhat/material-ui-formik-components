@@ -1,5 +1,9 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.5.0
+- Added support for use in `<FieldArray/>` Issue: [(issue: #17)](https://github.com/gerhat/material-ui-formik-components/issues/17)
+- Added [`<FieldArray/>` example](https://github.com/gerhat/material-ui-formik-components/tree/master/example/src/FieldArrayExample.jsx)
+
 ## 0.4.1
 - Updated dependencies to the latest version
 
