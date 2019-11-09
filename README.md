@@ -1,9 +1,7 @@
 # Material-UI Formik Components &middot; [![NPM](https://img.shields.io/npm/v/material-ui-formik-components.svg)](https://www.npmjs.com/package/material-ui-formik-components)
-
 We all love [Material-UI](https://material-ui.com) and [Formik](https://jaredpalmer.com/formik), we just need an easy way to make them work seamlessly together. This library was built just for that.
 
 # Installation
-
 Install the `material-ui-formik-components` package using the following command:
 
 ```sh
@@ -11,24 +9,20 @@ $ npm install --save material-ui-formik-components
 ```
 
 ## Peer dependencies
-
 The extension depends on the following packages:
 
 **Required**
-
 - [react](https://www.npmjs.com/package/react) >= 16.8
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 16.8
 - [Material-UI](https://material-ui.com) >= 4.0
 - [Formik](https://jaredpalmer.com/formik) >= 2.0
 
 **Optional**
-
 - [React Select](https://react-select.com) >= 3.0 - used by `Autocomplete` and `Select`
 - [Material-UI Pickers](https://material-ui-pickers.dev/) >= 3.0 - used by `DatePicker` and `DateTimePicker`
 - [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= 1.0 - used by `ChipInput`
 
 # Using the components
-
 The following components are supported:
 
 - `Autocomplete`
@@ -89,9 +83,7 @@ export default RegistrationForm
 ```
 
 # Example
-
 For a more detailed use of the package, please refer to the code in the [example folder](https://github.com/gerhat/material-ui-formik-components/tree/master/example) of this project.
 
 # License
-
 MIT
