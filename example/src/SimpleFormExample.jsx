@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { object, string, array, date } from 'yup'
-import { Autocomplete, Select, TextField, DateTimePicker } from '../../src'
+import { Autocomplete, Select, TextField, DatePicker } from '../../src'
 import countries from './data/countries.json'
 import skills from './data/skills.json'
 
@@ -76,8 +76,9 @@ const SimpleFormExample = () => (
           <Field
             required
             name="birthdate"
-            component={DateTimePicker}
+            component={DatePicker}
             label="Birth date"
+            format="dd/MM/yyyy"
           />
           <button type="submit" disabled={!props.dirty}>
             Submit
