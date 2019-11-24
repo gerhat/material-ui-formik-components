@@ -1,5 +1,9 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.5.2
+###### _Nov 24, 2019_
+- Added missing ts export for `<DatePicker/>` - thanks [@cargallo](https://github.com/cargallo)
+
 ## 0.5.1
 ###### _Nov 09, 2019_
 - Implemented `<DatePicker/>` component. Issue: [(issue: #19)](https://github.com/gerhat/material-ui-formik-components/issues/19)
