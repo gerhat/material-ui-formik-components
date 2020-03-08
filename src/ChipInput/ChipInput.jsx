@@ -30,6 +30,8 @@ class FChipInput extends React.PureComponent {
       form: { dirty, touched, errors },
       field: { name, value },
       options,
+      fullWidth,
+      margin,
       ...other
     } = this.props
 
@@ -50,6 +52,8 @@ class FChipInput extends React.PureComponent {
         onDelete={this.handleDeleteChip}
         helperText={hasError ? errorText : ''}
         error={hasError}
+        margin={margin}
+        fullWidth={fullWidth}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}
       />
