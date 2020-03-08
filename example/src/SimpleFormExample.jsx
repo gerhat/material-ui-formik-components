@@ -18,7 +18,7 @@ const initialValues = {
   gender: '',
   country: '',
   skills: [],
-  birthdate: '',
+  birthdate: null,
 }
 
 const SimpleFormExample = () => (
@@ -38,13 +38,16 @@ const SimpleFormExample = () => (
               Skills: ${values.skills.map(v => v.label).join(',')}
               Birth date: ${values.birthdate}`)
       }}
-      render={props => (
+    >
+      {formik => (
         <Form noValidate autoComplete="off">
           <Field
             required
             name="username"
             label="Username"
             component={TextField}
+            size="small"
+            variant="outlined"
           />
           <Field
             required
@@ -57,21 +60,31 @@ const SimpleFormExample = () => (
               { value: 'Other', label: 'Other' },
             ]}
             component={Select}
+            size="small"
+            variant="outlined"
           />
           <Field
-            required
             name="country"
-            label="Country"
             options={countries}
             component={Autocomplete}
+            size="small"
+            textFieldProps={{
+              label: 'Country',
+              required: true,
+              variant: 'outlined',
+            }}
           />
           <Field
-            required
             name="skills"
-            label="Skills"
             options={skills}
             component={Autocomplete}
-            isMultiple
+            size="small"
+            textFieldProps={{
+              label: 'Skills',
+              required: true,
+              variant: 'outlined',
+            }}
+            multiple
           />
           <Field
             required
@@ -79,13 +92,15 @@ const SimpleFormExample = () => (
             component={DatePicker}
             label="Birth date"
             format="dd/MM/yyyy"
+            size="small"
+            inputVariant="outlined"
           />
-          <button type="submit" disabled={!props.dirty}>
+          <button type="submit" disabled={!formik.dirty}>
             Submit
           </button>
         </Form>
       )}
-    />
+    </Formik>
   </div>
 )
 

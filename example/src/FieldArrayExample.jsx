@@ -24,7 +24,7 @@ const emptyFriendObject = {
   name: '',
   interests: [],
   gender: '',
-  birthdate: '',
+  birthdate: null,
 }
 
 const FieldArrayExample = () => (
