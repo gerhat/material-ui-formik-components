@@ -1,17 +1,19 @@
-import * as React from 'react';
-import { FieldProps, FormikProps, FormikValues } from 'formik';
+import * as React from 'react'
+import { FieldProps, FormikProps, FormikValues } from 'formik'
 import { SelectOptionsType } from '..'
 
-export interface AutocompleteProps {
-  label?: string;
-  field: FieldProps;
-  form: FormikProps<FormikValues>;
-  options: Array<SelectOptionsType>;
-  required?: boolean;
-  fullWidth?: boolean;
-  isMultiple?: boolean;
+export interface FAutocompleteProps {
+  field: FieldProps
+  form: FormikProps<FormikValues>
+  options: Array<SelectOptionsType>
+  textFieldProps: {
+    label?: string
+    required?: boolean
+    fullWidth?: boolean
+    margin?: 'none' | 'dense' | 'normal'
+  }
 }
 
-declare const Autocomplete: React.ComponentType<AutocompleteProps>;
+declare const FAutocomplete: React.ComponentType<FAutocompleteProps>
 
-export default Autocomplete;
+export default FAutocomplete

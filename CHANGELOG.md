@@ -1,5 +1,28 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.6.0
+###### _Mar 8, 2020_
+### General
+- Updated library and example packages to the latest versions
+- Refactored Formik code in `example/src/SimpleFormExample.jsx` to not use the `render` prop
+
+### Autocomplete
+- Replaced `react-select` with `@material-ui/lab/Autocomplete` for improved compatibility
+
+**Breaking changes**
+- Prop `isMultiple` has been changed to `multiple`
+- Props `label` and `required` must be provided as items in `textFieldProps` props e.g.
+```javascript
+  textFieldProps={{
+    label: 'Country',
+    required: true,
+    variant: 'outlined',
+  }}
+```
+### Select
+- Simplified select component by replacing `@material-ui/core/Select` with `@material-ui/core/TextField` + `select` prop _(see: https://material-ui.com/components/text-fields/#select)_
+
+
 ## 0.5.2
 ###### _Nov 24, 2019_
 - Added missing ts export for `<DatePicker/>` - thanks [@cargallo](https://github.com/cargallo)

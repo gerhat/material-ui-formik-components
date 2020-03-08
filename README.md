@@ -18,7 +18,7 @@ The extension depends on the following packages:
 - [Formik](https://jaredpalmer.com/formik) >= 2.0
 
 **Optional**
-- [React Select](https://react-select.com) >= 3.0 - used by `Autocomplete` and `Select`
+- [Material-UI Lab](https://material-ui.com/components/about-the-lab/) >4.0 - used by `Autocomplete`
 - [Material-UI Pickers](https://material-ui-pickers.dev/) >= 3.0 - used by `DatePicker` and `DateTimePicker`
 - [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input) >= 1.0 - used by `ChipInput`
 
@@ -54,7 +54,8 @@ class RegistrationForm extends React.PureComponent {
           onSubmit={values => {
             alert(`Username: ${values.username}\nGender: ${values.gender}`)
           }}
-          render={props => (
+        >
+          {formik => (
             <Form>
               <Field name="username" label="Username" component={TextField} />
               <Field
@@ -68,12 +69,12 @@ class RegistrationForm extends React.PureComponent {
                 ]}
                 component={Select}
               />
-              <button type="submit" disabled={!props.dirty}>
+              <button type="submit" disabled={!formik.dirty}>
                 Submit
               </button>
             </Form>
           )}
-        />
+        </Formik>
       </div>
     )
   }
