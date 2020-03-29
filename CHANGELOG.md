@@ -1,5 +1,9 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.6.1
+###### _Mar 29, 2020_
+- Package updates for fixing `minimist` security vulnerability
+
 ## 0.6.0
 ###### _Mar 8, 2020_
 ### General

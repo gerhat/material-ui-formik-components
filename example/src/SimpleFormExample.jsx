@@ -29,17 +29,17 @@ const SimpleFormExample = () => (
       validationSchema={validationSchema}
       validateOnBlur={false}
       validateOnChange
-      onSubmit={values => {
+      onSubmit={(values) => {
         // eslint-disable-next-line no-alert
         window.alert(`
               Username: ${values.username}
               Gender: ${values.gender}
               Country: ${values.country.label}
-              Skills: ${values.skills.map(v => v.label).join(',')}
+              Skills: ${values.skills.map((v) => v.label).join(',')}
               Birth date: ${values.birthdate}`)
       }}
     >
-      {formik => (
+      {(formik) => (
         <Form noValidate autoComplete="off">
           <Field
             required
