@@ -6,9 +6,7 @@ import { ChipInput, TextField, Select, DateTimePicker } from '../../src'
 const validationSchema = object().shape({
   friends: array().of(
     object().shape({
-      name: string()
-        .min(4, 'Name is too short')
-        .required('Name is Required'),
+      name: string().min(4, 'Name is too short').required('Name is Required'),
       interests: array().required('Interests is required'),
       gender: string().required('Gender is required'),
       birthdate: string().required('Birth date is required'),
@@ -34,16 +32,16 @@ const FieldArrayExample = () => (
       initialValues={initialValues}
       validationSchema={validationSchema}
       validateOnChange={false}
-      onSubmit={values => {
+      onSubmit={(values) => {
         // eslint-disable-next-line no-alert
         window.alert(JSON.stringify(values, null, 2))
       }}
     >
-      {props => (
+      {(props) => (
         <Form noValidate autoComplete="off">
           <FieldArray
             name="friends"
-            render={arrayHelpers => (
+            render={(arrayHelpers) => (
               <div>
                 {props.values.friends && props.values.friends.length > 0 ? (
                   props.values.friends.map((friend, index) => (
