@@ -1,5 +1,11 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.6.2
+###### _Apr 23, 2020_
+- Fixed initial values not being displayed at AutoComplete. Issue: [(issue: #28)](https://github.com/gerhat/material-ui-formik-components/issues/28)
+- Updated examples to demonstrate the `initialValues` prop
+- Updated packages to latest versions
+
 ## 0.6.1
 ###### _Mar 29, 2020_
 - Package updates for fixing `minimist` security vulnerability
@@ -25,7 +31,6 @@
 ```
 ### Select
 - Simplified select component by replacing `@material-ui/core/Select` with `@material-ui/core/TextField` + `select` prop _(see: https://material-ui.com/components/text-fields/#select)_
-
 
 ## 0.5.2
 ###### _Nov 24, 2019_
