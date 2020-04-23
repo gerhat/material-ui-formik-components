@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { DatePicker } from '@material-ui/pickers'
 import { getIn } from 'formik'
 
-const FDatePicker = props => {
+const FDatePicker = (props) => {
   const {
     label,
     field,
@@ -18,7 +18,7 @@ const FDatePicker = props => {
       label={label}
       error={hasError}
       helperText={hasError ? errorText : ''}
-      onChange={value => setFieldValue(field.name, value)}
+      onChange={(value) => setFieldValue(field.name, value)}
       value={field.value}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...other}

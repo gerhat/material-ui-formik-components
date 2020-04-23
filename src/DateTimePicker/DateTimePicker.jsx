@@ -19,7 +19,7 @@ class FDateTimePicker extends React.PureComponent {
         label={label}
         error={hasError}
         helperText={hasError ? errorText : ''}
-        onChange={value => setFieldValue(field.name, value)}
+        onChange={(value) => setFieldValue(field.name, value)}
         value={field.value}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}

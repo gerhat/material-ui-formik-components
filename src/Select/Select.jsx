@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import { getIn } from 'formik'
 
-const FSelect = props => {
+const FSelect = (props) => {
   const {
     label,
     form: { dirty, touched, errors, setFieldValue },
@@ -26,13 +26,13 @@ const FSelect = props => {
       label={label}
       error={hasError}
       helperText={hasError ? errorText : ''}
-      onChange={e => setFieldValue(name, e.target.value)}
+      onChange={(e) => setFieldValue(name, e.target.value)}
       value={value}
       margin={margin}
       fullWidth={fullWidth}
       {...other}
     >
-      {options.map(item => (
+      {options.map((item) => (
         <MenuItem key={`${id}_${item.value}`} value={item.value}>
           {item.label}
         </MenuItem>
