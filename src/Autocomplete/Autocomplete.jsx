@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import { getIn } from 'formik'
 
-const FAutocomplete = props => {
+const FAutocomplete = (props) => {
   const {
     field,
     form: { dirty, touched, errors, setFieldValue },
@@ -29,7 +29,9 @@ const FAutocomplete = props => {
       options={options}
       getOptionLabel={getOptionLabel}
       onChange={(_, value) => setFieldValue(field.name, value)}
-      renderInput={params => (
+      value={field.value}
+      getOptionSelected={(option, val) => option.value === val.value}
+      renderInput={(params) => (
         <TextField
           {...params}
           error={hasError}
@@ -64,7 +66,7 @@ FAutocomplete.propTypes = {
 }
 
 FAutocomplete.defaultProps = {
-  getOptionLabel: option => option.label,
+  getOptionLabel: (option) => option.label,
   textFieldProps: {
     required: false,
     fullWidth: true,
