@@ -30,6 +30,7 @@ const FAutocomplete = (props) => {
       getOptionLabel={getOptionLabel}
       onChange={(_, value) => setFieldValue(field.name, value)}
       value={field.value}
+      getOptionSelected={(option, val) => option.value === val.value}
       renderInput={(params) => (
         <TextField
           {...params}
