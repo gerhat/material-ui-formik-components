@@ -1,7 +1,13 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import { object, string, array, date } from 'yup'
-import { Autocomplete, Select, TextField, DatePicker } from '../../src'
+import { object, string, array, date, mixed } from 'yup'
+import {
+  Autocomplete,
+  Select,
+  TextField,
+  KeyboardDatePicker,
+  KeyboardTimePicker,
+} from '../../src'
 import countries from './data/countries.json'
 import skills from './data/skills.json'
 
@@ -11,6 +17,7 @@ const validationSchema = object().shape({
   country: string().nullable().required('Country is required'),
   skills: array().required('At least one skill is required'),
   birthdate: date().nullable().required('Birth date is required'),
+  interviewTime: mixed().required('Interview Time is required'),
 })
 
 const initialValues = {
@@ -24,6 +31,7 @@ const initialValues = {
     },
   ],
   birthdate: null,
+  interviewTime: null,
 }
 
 const SimpleFormExample = () => (
@@ -41,7 +49,9 @@ const SimpleFormExample = () => (
               Gender: ${values.gender}
               Country: ${values.country.label}
               Skills: ${values.skills.map((v) => v.label).join(', ')}
-              Birth date: ${values.birthdate}`)
+              Birth date: ${values.birthdate}
+              Interview Time: ${values.interviewTime}
+              `)
       }}
     >
       {(formik) => (
@@ -94,11 +104,21 @@ const SimpleFormExample = () => (
           <Field
             required
             name="birthdate"
-            component={DatePicker}
+            component={KeyboardDatePicker}
             label="Birth date"
             format="dd/MM/yyyy"
             size="small"
             inputVariant="outlined"
+          />
+          <Field
+            required
+            name="interviewTime"
+            component={KeyboardTimePicker}
+            label="Interview Time"
+            size="small"
+            inputVariant="outlined"
+            mask="__:__"
+            ampm={false}
           />
           <button type="submit" disabled={!formik.dirty}>
             Submit
