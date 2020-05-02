@@ -28,9 +28,6 @@ const FKeyboardTimePicker = (props) => {
 
 FKeyboardTimePicker.propTypes = {
   label: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-  mask: PropTypes.string,
-  format: PropTypes.string,
   field: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
