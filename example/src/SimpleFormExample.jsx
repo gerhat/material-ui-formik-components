@@ -8,9 +8,9 @@ import skills from './data/skills.json'
 const validationSchema = object().shape({
   username: string().required('Username is required'),
   gender: string().required('Gender selection is required'),
-  country: string().required('Country is required'),
+  country: string().nullable().required('Country is required'),
   skills: array().required('At least one skill is required'),
-  birthdate: date().required('Birth date is required'),
+  birthdate: date().nullable().required('Birth date is required'),
 })
 
 const initialValues = {
