@@ -22,7 +22,7 @@ const validationSchema = object().shape({
 
 const initialValues = {
   username: '',
-  gender: 'Male',
+  gender: 'Female',
   country: null,
   skills: [
     {
@@ -45,13 +45,13 @@ const SimpleFormExample = () => (
       onSubmit={(values) => {
         // eslint-disable-next-line no-alert
         window.alert(`
-              Username: ${values.username}
-              Gender: ${values.gender}
-              Country: ${values.country.label}
-              Skills: ${values.skills.map((v) => v.label).join(', ')}
-              Birth date: ${values.birthdate}
-              Interview Time: ${values.interviewTime}
-              `)
+          Username: ${values.username}
+          Gender: ${values.gender}
+          Country: ${values.country.label}
+          Skills: ${values.skills.map((v) => v.label).join(', ')}
+          Birth date: ${values.birthdate}
+          Interview Time: ${values.interviewTime}
+        `)
       }}
     >
       {(formik) => (

@@ -1,15 +1,15 @@
 import React from 'react'
 import { Formik, Form, Field, FieldArray } from 'formik'
-import { object, string, array } from 'yup'
+import { object, string, array, date } from 'yup'
 import { ChipInput, TextField, Select, DateTimePicker } from '../../src'
 
 const validationSchema = object().shape({
   friends: array().of(
     object().shape({
-      name: string().min(4, 'Name is too short').required('Name is Required'),
+      name: string().min(3, 'Name is too short').required('Name is Required'),
       interests: array().required('Interests is required'),
       gender: string().required('Gender is required'),
-      birthdate: string().required('Birth date is required'),
+      birthdate: date().nullable().required('Birth date is required'),
     })
   ),
 })
@@ -50,7 +50,7 @@ const FieldArrayExample = () => (
                       <Field
                         name={`friends.${index}.name`}
                         component={TextField}
-                        label="Name"
+                        label="Name (at least 3 chars)"
                         required
                       />
                       <Field

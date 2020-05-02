@@ -11,7 +11,7 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
     <SimpleFormExample />
-    <div style={{ margin: '30px 0', height: 20, backgroundColor: '#ddd' }} />
+    <div style={{ margin: '30px 0', height: 10, backgroundColor: '#ddd' }} />
     <FieldArrayExample />
   </MuiPickersUtilsProvider>,
   rootElement
