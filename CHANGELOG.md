@@ -1,13 +1,18 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.7.0
+###### _May 2, 2020_
+- Added Support for Keyboard Pickers ( `KeyboardDatePicker`, `KeyboardTimePicker`, `KeyboardDateTimePicker` and `TimePicker`) [PR: #30](https://github.com/gerhat/material-ui-formik-components/pull/30) thanks @shtjefeen
+- Updated `SimpleFormExample.jsx` to use Keyboard Pickers
+
 ## 0.6.3
 ###### _May 2, 2020_
-- Fixed handling of null initial values at `AutoComplete` with prop `multiple`. [(Issue: #31)](https://github.com/gerhat/material-ui-formik-components/issues/31)
+- Fixed handling of null initial values at `AutoComplete` with prop `multiple`. [Issue: #31](https://github.com/gerhat/material-ui-formik-components/issues/31) thanks @shtjefeen
 - Updated packages to latest versions
 
 ## 0.6.2
 ###### _Apr 23, 2020_
-- Fixed initial values not being displayed at AutoComplete. [(Issue: #28)](https://github.com/gerhat/material-ui-formik-components/issues/28)
+- Fixed initial values not being displayed at AutoComplete. [Issue: #28](https://github.com/gerhat/material-ui-formik-components/issues/28)
 - Updated examples to demonstrate the `initialValues` prop
 - Updated packages to latest versions
 
