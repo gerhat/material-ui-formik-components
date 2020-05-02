@@ -2,12 +2,12 @@
 
 ## 0.6.3
 ###### _May 2, 2020_
-- Fixed handling of null initial values at `AutoComplete` with prop `multiple`. Issue: [(issue: #28)](https://github.com/gerhat/material-ui-formik-components/issues/31)
+- Fixed handling of null initial values at `AutoComplete` with prop `multiple`. [(Issue: #31)](https://github.com/gerhat/material-ui-formik-components/issues/31)
 - Updated packages to latest versions
 
 ## 0.6.2
 ###### _Apr 23, 2020_
-- Fixed initial values not being displayed at AutoComplete. Issue: [(issue: #28)](https://github.com/gerhat/material-ui-formik-components/issues/28)
+- Fixed initial values not being displayed at AutoComplete. [(Issue: #28)](https://github.com/gerhat/material-ui-formik-components/issues/28)
 - Updated examples to demonstrate the `initialValues` prop
 - Updated packages to latest versions
 
