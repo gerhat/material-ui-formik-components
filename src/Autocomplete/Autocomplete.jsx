@@ -23,24 +23,38 @@ const FAutocomplete = (props) => {
   const errorText = getIn(errors, field.name)
   const touchedVal = getIn(touched, field.name)
   const hasError = dirty && touchedVal && errorText !== undefined
+  const isMultiple = autoCompleteProps.multiple
+  const isMultipleWithValue = isMultiple && field.value
+  const canBeRendered = !isMultiple || isMultipleWithValue
+
+  if (isMultiple && field.value === null) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `Initial value of autocomplete with name: "${field.name}" cannot be null. Use [] instead.`
+    )
+  }
 
   return (
-    <Autocomplete
-      options={options}
-      getOptionLabel={getOptionLabel}
-      onChange={(_, value) => setFieldValue(field.name, value)}
-      value={field.value}
-      getOptionSelected={(option, val) => option.value === val.value}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          error={hasError}
-          helperText={hasError ? errorText : ''}
-          {...mergedTextFieldProps}
+    <>
+      {canBeRendered && (
+        <Autocomplete
+          options={options}
+          getOptionLabel={getOptionLabel}
+          onChange={(_, value) => setFieldValue(field.name, value)}
+          value={field.value}
+          getOptionSelected={(option, val) => option.value === val.value}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              error={hasError}
+              helperText={hasError ? errorText : ''}
+              {...mergedTextFieldProps}
+            />
+          )}
+          {...autoCompleteProps}
         />
       )}
-      {...autoCompleteProps}
-    />
+    </>
   )
 }
 
