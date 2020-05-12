@@ -25,8 +25,8 @@ The extension depends on the following packages:
 # Using the components
 The following components are supported:
 
-- `Autocomplete`
-- `ChipInput`
+- `Autocomplete` - requires [Material-UI Lab](https://material-ui.com/components/about-the-lab/)
+- `ChipInput` - requires [material-ui-chip-input](https://github.com/TeamWertarbyte/material-ui-chip-input)
 - `DatePicker`, `DateTimePicker`, `KeyboardDatePicker`, `KeyboardTimePicker`, `KeyboardDateTimePicker` and `TimePicker` - please make sure you have installed `date-fns`, `moment` or `luxon` see: [Material-UI Pickers / Installation](https://material-ui-pickers.dev/getting-started/installation)
 - `RadioGroup`
 - `Select`
