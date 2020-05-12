@@ -31,11 +31,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
-          'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
       },
     ],
@@ -55,11 +54,18 @@ module.exports = {
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
+      '@material-ui/core': path.resolve('./node_modules/@material-ui/core'),
+      '@material-ui/lab': path.resolve('./node_modules/@material-ui/lab'),
       '@material-ui/styles': path.resolve('./node_modules/@material-ui/styles'),
       '@material-ui/pickers': path.resolve(
         './node_modules/@material-ui/pickers'
       ),
+      'prop-types': path.resolve('./node_modules/prop-types'),
+      formik: path.resolve('./node_modules/formik'),
+      'material-ui-chip-input': path.resolve(
+        './node_modules/material-ui-chip-input'
+      ),
     },
-    extensions: ['.scss', '.jsx', '.js', '.json'],
+    extensions: ['.jsx', '.js', '.json'],
   },
 }
