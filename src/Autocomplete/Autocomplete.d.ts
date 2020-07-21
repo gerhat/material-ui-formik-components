@@ -8,6 +8,7 @@ export interface FAutocompleteProps {
   options: Array<SelectOptionsType>
   textFieldProps: {
     label?: string
+    onChange?: (e: any) => void
     required?: boolean
     fullWidth?: boolean
     margin?: 'none' | 'dense' | 'normal'
