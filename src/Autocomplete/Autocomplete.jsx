@@ -73,6 +73,7 @@ FAutocomplete.propTypes = {
   getOptionLabel: PropTypes.func,
   textFieldProps: PropTypes.shape({
     label: PropTypes.string,
+    onChange: PropTypes.func,
     required: PropTypes.bool,
     fullWidth: PropTypes.bool,
     margin: PropTypes.oneOf(['none', 'dense', 'normal']),
@@ -82,6 +83,7 @@ FAutocomplete.propTypes = {
 FAutocomplete.defaultProps = {
   getOptionLabel: (option) => option.label,
   textFieldProps: {
+    onChange: () => {},
     required: false,
     fullWidth: true,
     margin: 'normal',
