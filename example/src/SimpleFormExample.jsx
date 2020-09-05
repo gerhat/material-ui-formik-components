@@ -7,6 +7,7 @@ import {
   TextField,
   KeyboardDatePicker,
   KeyboardTimePicker,
+  RadioGroup,
 } from '../../src'
 import countries from './data/countries.json'
 import skills from './data/skills.json'
@@ -18,6 +19,7 @@ const validationSchema = object().shape({
   skills: array().required('At least one skill is required'),
   birthdate: date().nullable().required('Birth date is required'),
   interviewTime: mixed().required('Interview Time is required'),
+  education: string().required('Education is required'),
 })
 
 const initialValues = {
@@ -32,6 +34,7 @@ const initialValues = {
   ],
   birthdate: null,
   interviewTime: null,
+  education: '',
 }
 
 const SimpleFormExample = () => (
@@ -119,6 +122,21 @@ const SimpleFormExample = () => (
             inputVariant="outlined"
             mask="__:__"
             ampm={false}
+          />
+          <Field
+            required
+            name="education"
+            component={RadioGroup}
+            label="Education"
+            options={[
+              { value: '', label: '-- Please Select --' },
+              { value: 'Elementary', label: 'Elementary' },
+              { value: 'High School', label: 'High School' },
+              { value: 'Bachelor', label: 'Bachelor' },
+              { value: 'Master', label: 'Master' },
+              { value: 'Ph.D.', label: 'Ph.D.' },
+            ]}
+            groupProps={{ row: true }}
           />
           <button type="submit" disabled={!formik.dirty}>
             Submit
