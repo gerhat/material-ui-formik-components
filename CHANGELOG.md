@@ -1,5 +1,12 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.7.2
+###### _Sept 6, 2020_
+- Fixed [Issue: #40](https://github.com/gerhat/material-ui-formik-components/issues/40) - cannot read property 'formControl' of undefined thanks @wsmith2020
+- Added `RadioGroup` to SimpleExample demo
+- Updated devDependencies in main project
+- Updated dependencies and devDependencies in example project
+
 ## 0.7.1
 ###### _May 12, 2020_
 - Moved `@material-ui/pickers`, `@date-io/date-fns`, `date-fns` and `material-ui-chip-input` to optionalDependencies [Issue: #33](https://github.com/gerhat/material-ui-formik-components/issues/33) thanks @depiction
