@@ -1,5 +1,6 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { bool } from 'prop-types'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Radio from '@material-ui/core/Radio'
 import FormControl from '@material-ui/core/FormControl'
@@ -18,14 +19,8 @@ class FRadioGroup extends React.PureComponent {
       required,
       fullWidth,
       margin,
-      classes: {
-        formControl,
-        formLabel,
-        radioGroup,
-        formControlLabel,
-        radio,
-        formHelperText,
-      },
+      classes,
+      groupProps,
       ...other
     } = this.props
     const errorText = getIn(errors, field.name)
@@ -38,30 +33,48 @@ class FRadioGroup extends React.PureComponent {
         margin={margin}
         required={required}
         error={hasError}
-        className={formControl}
+        className={classes && classes.formControl ? classes.formControl : ''}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...other}
       >
-        <FormLabel className={formLabel}>{label}</FormLabel>
+        <FormLabel
+          className={classes && classes.formLabel ? classes.formLabel : ''}
+        >
+          {label}
+        </FormLabel>
         <RadioGroup
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...groupProps}
           aria-label={label}
           name={field.name}
           value={field.value}
-          onChange={event => setFieldValue(field.name, event.target.value)}
-          className={radioGroup}
+          onChange={(event) => setFieldValue(field.name, event.target.value)}
+          className={classes && classes.radioGroup ? classes.radioGroup : ''}
         >
-          {options.map(item => (
+          {options.map((item) => (
             <FormControlLabel
               key={`${item.label}_${item.value}`}
               value={item.value}
-              control={<Radio className={radio} />}
+              control={
+                <Radio
+                  className={classes && classes.radio ? classes.radio : ''}
+                />
+              }
               label={item.label}
-              className={formControlLabel}
+              className={
+                classes && classes.formControlLabel
+                  ? classes.formControlLabel
+                  : ''
+              }
             />
           ))}
         </RadioGroup>
         {hasError && (
-          <FormHelperText className={formHelperText}>
+          <FormHelperText
+            className={
+              classes && classes.formHelperText ? classes.formHelperText : ''
+            }
+          >
             {errorText}
           </FormHelperText>
         )}
@@ -74,7 +87,7 @@ FRadioGroup.propTypes = {
   label: PropTypes.string.isRequired,
   field: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.any,
+    value: PropTypes.string,
   }).isRequired,
   form: PropTypes.shape({
     touched: PropTypes.object,
@@ -98,6 +111,9 @@ FRadioGroup.propTypes = {
     radio: PropTypes.string,
     formHelperText: PropTypes.string,
   }),
+  groupProps: PropTypes.shape({
+    row: bool,
+  }),
 }
 
 FRadioGroup.defaultProps = {
@@ -105,6 +121,7 @@ FRadioGroup.defaultProps = {
   fullWidth: true,
   margin: 'normal',
   classes: undefined,
+  groupProps: undefined,
 }
 
 export default FRadioGroup
