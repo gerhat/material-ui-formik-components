@@ -1,5 +1,5 @@
-# Material-UI Formik Components &middot; [![NPM](https://img.shields.io/npm/v/material-ui-formik-components.svg)](https://www.npmjs.com/package/material-ui-formik-components) &middot; [![Total Downloads](https://img.shields.io/npm/dt/material-ui-formik-components.svg)](https://www.npmjs.com/package/material-ui-formik-components) &middot; [![devDependency Status](https://david-dm.org/gerhat/material-ui-formik-components/dev-status.svg)](https://david-dm.org/gerhat/material-ui-formik-components?type=dev)
-We all love [Material-UI](https://material-ui.com) and [Formik](https://jaredpalmer.com/formik), we just need an easy way to make them work seamlessly together. This library was built just for that.
+# Material-UI Formik Components <br/> [![NPM](https://img.shields.io/npm/v/material-ui-formik-components?color=%23177bbb)](https://www.npmjs.com/package/material-ui-formik-components) &middot; [![Total Downloads](https://img.shields.io/npm/dm/material-ui-formik-components?style=flat)](https://www.npmjs.com/package/material-ui-formik-components) &middot; [![devDependency Status](https://david-dm.org/gerhat/material-ui-formik-components/dev-status.svg)](https://david-dm.org/gerhat/material-ui-formik-components?type=dev) &middot; [![npm bundle size](https://img.shields.io/bundlephobia/minzip/material-ui-formik-components)](https://www.npmjs.com/package/material-ui-formik-components)
+We all love [Material-UI](https://material-ui.com) and [Formik](https://formik.org), we just need an easy way to make them work seamlessly together. This library was built just for that.
 
 # Installation
 Install the `material-ui-formik-components` package using the following command:
@@ -15,7 +15,7 @@ The extension depends on the following packages:
 - [react](https://www.npmjs.com/package/react) >= 16.8
 - [react-dom](https://www.npmjs.com/package/react-dom) >= 16.8
 - [Material-UI](https://material-ui.com) >= 4.0
-- [Formik](https://jaredpalmer.com/formik) >= 2.0
+- [Formik](https://formik.org) >= 2.0
 
 **Optional**
 - [Material-UI Lab](https://material-ui.com/components/about-the-lab/) >4.0 - used by `Autocomplete`
