@@ -1,5 +1,11 @@
 ### [Versions](https://github.com/gerhat/material-ui-formik-components/releases)
 
+## 0.7.3
+###### _Oct 22, 2020_
+- `Switch`: fixed warning for changing from uncontrolled to controlled state
+- `Autocomplete`: fixed TypeScript autocomplete props interface extension
+- Updated dependencies in main project
+
 ## 0.7.2
 ###### _Sept 6, 2020_
 - Fixed [Issue: #40](https://github.com/gerhat/material-ui-formik-components/issues/40) - cannot read property 'formControl' of undefined thanks @wsmith2020
