@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -9,29 +10,17 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import { getIn } from 'formik'
 
 class FSwitch extends React.PureComponent {
-  constructor(props) {
-    super(props)
-
-    const {
-      form: { values },
-      field: { name },
-    } = props
-    const initialState = values[name]
-    this.state = { isChecked: initialState }
-  }
-
   render() {
     const {
       label,
       field,
-      form: { touched, errors, values, setFieldValue },
+      form: { touched, errors, setFieldValue },
       required,
       fullWidth,
       margin,
       theme,
       ...other
     } = this.props
-    const { isChecked } = this.state
 
     const errorText = getIn(errors, field.name)
     const touchedVal = getIn(touched, field.name)
@@ -40,13 +29,9 @@ class FSwitch extends React.PureComponent {
     const labelStyle = hasError ? { color: errorColor } : {}
 
     const controlProps = {
-      checked: isChecked,
-      value: values[field.name],
-      onChange: event => {
-        const { checked } = event.target
-        this.setState({ isChecked: checked }, () => {
-          setFieldValue(field.name, checked)
-        })
+      checked: field.value || false,
+      onChange: (event) => {
+        setFieldValue(field.name, event.target.checked)
       },
     }
 
